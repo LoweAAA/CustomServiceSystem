@@ -1,7 +1,7 @@
 package com.givemefive.customerservicesystem.repostory.impl;
 
-import com.givemefive.customerservicesystem.model.Mytable;
-import com.givemefive.customerservicesystem.repostory.MytableDao;
+import com.givemefive.customerservicesystem.model.Record;
+import com.givemefive.customerservicesystem.repostory.RecordDao;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,27 +12,31 @@ import java.util.List;
 
 @Repository
 @Transactional
-public class MytableDaoImpl implements MytableDao{
-
-    private String hql;
+public class RecordDaoImpl implements RecordDao{
 
     @Autowired
     private SessionFactory sessionFactory;
 
+    private String hql;
 
-    private Session currentSession(){
+    private Session session(){
         return sessionFactory.getCurrentSession();
     }
 
-
-    public List<Mytable> getall() {
-        hql="FROM Mytable";
-        return currentSession().createQuery(hql).list();
+    public List<Record> getAll() {
+        hql="FROM Record";
+        return session().createQuery(hql).list();
     }
 
-    public void save(Mytable mytable) {
-        currentSession().save(mytable);
+    public void save(Record record) {
+
     }
 
+    public void update(Record record) {
 
+    }
+
+    public void detele(Record record) {
+
+    }
 }

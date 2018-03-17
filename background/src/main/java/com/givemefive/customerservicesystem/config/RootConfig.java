@@ -53,7 +53,7 @@ public class RootConfig {
         sessionFactoryBean.setDataSource(dateSource());
         sessionFactoryBean.setPackagesToScan("com.givemefive.customerservicesystem.model");
         Properties properties=new Properties();
-        properties.setProperty("dialect","org.hibernate.dialect.MySQL5Dialect");
+        properties.setProperty("dialect","org.hibernate.dialect.MySQLDialect");
         sessionFactoryBean.setHibernateProperties(properties);
         return sessionFactoryBean;
     }
