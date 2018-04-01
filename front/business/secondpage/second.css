@@ -39,7 +39,7 @@ h1 a {
 
 h3 {
   font-size: 22px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 h4 {
@@ -193,4 +193,126 @@ h4 {
 .main .page-heart {
   float: left;
   width: 100%;
+}
+
+.infobox{
+    display: inline-block;
+    width: 210px;
+    height: 66px;
+    color: #555;
+    background-color: #FFF;
+    box-shadow: none;
+    border-radius: 0;
+    margin: -1px 20px 0 -1px;
+    padding: 8px 3px 6px 9px;
+    border: 1px dotted;
+    border-color: #d8d8d8!important;
+    vertical-align: middle;
+    text-align: left;
+    position: relative;
+}
+
+.infobox-green{
+  color:#9abc32;
+}
+
+.infobox-red {
+    color: #f79263;
+}
+
+.infobox>.infobox-data {
+    display: inline-block;
+    border: 0;
+    border-top-width: 0;
+    font-size: 13px;
+    text-align: left;
+    line-height: 21px;
+    min-width: 130px;
+    padding-left: 8px;
+    position: relative;
+    top: 0;
+}
+
+.infobox>.infobox-data>.infobox-data-number {
+    display: block;
+    font-size: 22px;
+    margin: 2px 0 4px;
+    position: relative;
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.15);
+}
+
+.infobox .infobox-content {
+    color: #555;
+}
+
+.infobox>.stat.stat-success {
+    color: #77c646;
+}
+
+.infoicon{
+  height: 42px;
+  width: 44px;
+  font-size: 30px;
+  display: inline-block;
+  padding: 1px;
+  vertical-align: bottom;
+}
+
+.infobox>.stat {
+    display: inline-block;
+    position: absolute;
+    right: 5px;
+    top: 11px;
+    text-shadow: none;
+    color: #abbac3;
+    font-size: 13px;
+    font-weight: bold;
+    padding-right: 5px;
+    padding-top: 3px;
+}
+
+.infobox-blue.infobox-dark {
+    background-color: #6fb3e0;
+    border-color: #6fb3e0;
+}
+
+.infobox-dark {
+    margin: 1px 1px 0 0;
+    border-color: transparent!important;
+    border: 0;
+    color: #FFF;
+    padding: 4px;
+}
+
+.word-picture{
+  position: relative;
+  width: 58.88888%;
+  height: auto;
+  float: left;
+  margin-top: 100px;
+  margin-left: 20px;
+}
+
+.search-ditail{
+  float: left;
+  width: 48%;
+}
+
+.classical{
+  margin: 20px;
+}
+
+.my-button{
+  float: right;
+  width: 20%;
+}
+
+.btn-i{
+  width: 150px;
+  margin: 20px;
+}
+
+.btn-m{
+  width: 150px;
+  margin-bottom: 10px;
 }

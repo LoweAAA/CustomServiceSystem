@@ -8,14 +8,14 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>客服首页</title>
+    <title>问题信息统计</title>
 
     <!-- Bootstrap core CSS -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="../lib/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="second.css" rel="stylesheet">
+    <link href="../secondpage/second.css" rel="stylesheet">
 </head>
 
 <body>
@@ -56,8 +56,8 @@
       				<li>
       					<div class="link"><i class="fa fa-code"></i>知识库<i class="fa fa-chevron-down"></i></div>
       					<ul class="submenu">
-      						<li><a href="../knowledge/information.html">信息统计</a></li>
-                  <li><a href="#">问题管理</a></li>
+      						<li><a href="#">信息统计</a></li>
+                  <li><a href="questions.html">问题管理</a></li>
                   <li><a href="#">相似词汇</a></li>
       					</ul>
       				</li>
@@ -70,43 +70,13 @@
         <!--统计数据页面
         ==============================-->
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">数据统计</h1>
-          <div class="container">
-            <h3>基本情况统计</h3>
-            <div class="infobox infobox-green">
-              <div class="infoicon"><i class="fa fa-users"></i></div>
-              <div class="infobox-data">
-                <span class="infobox-data-number">32</span>
-                <div class="infobox-content">当前在线客服</div>
-              </div>
-              <div class="stat stat-success">8% 
-                <span class="glyphicon glyphicon-arrow-up"></span>
-              </div>
-            </div>
-            <div class="infobox infobox-red">
-              <div class="infoicon"><span class="glyphicon glyphicon-stats"></span></div>
-              <div class="infobox-data">
-                <span class="infobox-data-number">66666</span>
-                <div class="infobox-content">当前在线客户</div>
-              </div>
-              <div class="stat stat-success">10% 
-                <span class="glyphicon glyphicon-arrow-up"></span>
-              </div>
-            </div>
-            <div class="infobox infobox-blue">
-              <div class="infoicon"><span class="glyphicon glyphicon-download-alt"></span></div>
-              <div class="infobox-data">
-                <div class="infobox-content">下载次数</div>
-                <span class="infobox-data-number">10000</span>
-              </div>
-              <div class="stat stat-success">7% 
-                <span class="glyphicon glyphicon-arrow-up"></span>
-              </div>
-            </div>
-            <img class="word-picture" src="../img/ciyun.jpg">
-        </div>
-        <h3>问题产品排行</h3>
-        <div id="container" style="height: 400px;margin-top: 50px; margin-bottom: 50px;">
+          <h1 class="page-header">信息统计</h1>
+          <h3>产品问题比率</h3>
+          <div id="container" style="height: 400px;margin-bottom: 50px;">
+          </div>
+          <h3>提问关键词统计</h3>
+          <div id="question" style="height: 400px;margin-bottom: 50px;">
+          </div>
         </div>
       </div>
     </div>
