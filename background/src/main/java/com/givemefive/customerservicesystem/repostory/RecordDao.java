@@ -12,5 +12,5 @@ public interface RecordDao {
 
     void update(Record record);
 
-    void detele(Record record);
+    void delete(String id);
 }

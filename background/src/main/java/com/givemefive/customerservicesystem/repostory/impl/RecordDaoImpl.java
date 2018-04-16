@@ -29,14 +29,15 @@ public class RecordDaoImpl implements RecordDao{
     }
 
     public void save(Record record) {
-
+        session().save(record);
     }
 
     public void update(Record record) {
-
+        session().update(record);
     }
 
-    public void detele(Record record) {
-
+    public void delete(String id) {
+        hql = "DELETE FROM User l WHERE l.id = ?";
+        session().createQuery(hql).setParameter(0, id).executeUpdate();
     }
 }
