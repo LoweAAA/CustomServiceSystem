@@ -1,6 +1,7 @@
 package com.givemefive.customerservicesystem.model;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 @Table(name = "customer_service", schema = "CustomerSurvice", catalog = "")
@@ -11,6 +12,10 @@ public class CustomerService {
     private String csPassword;
     private String csContactInformation;
     private String csCompanyId;
+    private Collection<CsEvaluation> csEvaluationsByCsId;
+    private Company companyByCsCompanyId;
+    private Collection<Record> recordsByCsId;
+    private Collection<Schedule> schedulesByCsId;
 
     @Id
     @Column(name = "cs_id", nullable = false, length = 20)
@@ -99,5 +104,42 @@ public class CustomerService {
         result = 31 * result + (csContactInformation != null ? csContactInformation.hashCode() : 0);
         result = 31 * result + (csCompanyId != null ? csCompanyId.hashCode() : 0);
         return result;
+    }
+
+    @OneToMany(mappedBy = "customerServiceByCsEvaluationCsId")
+    public Collection<CsEvaluation> getCsEvaluationsByCsId() {
+        return csEvaluationsByCsId;
+    }
+
+    public void setCsEvaluationsByCsId(Collection<CsEvaluation> csEvaluationsByCsId) {
+        this.csEvaluationsByCsId = csEvaluationsByCsId;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "cs_company_ID", referencedColumnName = "company_id", nullable = false)
+    public Company getCompanyByCsCompanyId() {
+        return companyByCsCompanyId;
+    }
+
+    public void setCompanyByCsCompanyId(Company companyByCsCompanyId) {
+        this.companyByCsCompanyId = companyByCsCompanyId;
+    }
+
+    @OneToMany(mappedBy = "customerServiceByRecordCsId")
+    public Collection<Record> getRecordsByCsId() {
+        return recordsByCsId;
+    }
+
+    public void setRecordsByCsId(Collection<Record> recordsByCsId) {
+        this.recordsByCsId = recordsByCsId;
+    }
+
+    @OneToMany(mappedBy = "customerServiceByScheduleCsId")
+    public Collection<Schedule> getSchedulesByCsId() {
+        return schedulesByCsId;
+    }
+
+    public void setSchedulesByCsId(Collection<Schedule> schedulesByCsId) {
+        this.schedulesByCsId = schedulesByCsId;
     }
 }

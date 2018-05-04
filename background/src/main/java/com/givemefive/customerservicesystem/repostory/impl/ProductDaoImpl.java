@@ -1,6 +1,7 @@
 package com.givemefive.customerservicesystem.repostory.impl;
 
 import com.givemefive.customerservicesystem.model.Product;
+import com.givemefive.customerservicesystem.model.Category;
 import com.givemefive.customerservicesystem.repostory.ProductDao;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -36,8 +37,13 @@ public class ProductDaoImpl implements ProductDao {
     }
 
     public List<Product> getAll() {
-        hql="FROM CustomerService ";
+        hql="FROM Product ";
         return session().createQuery(hql).list();
+    }
+
+    public String namequeryBycompanyname(String name){
+        hql = "SELECT p.name FROM Product p ,Category c WHERE (p.category_id = c.category_id AND c.company_id = ?)";
+        return (String) session().createQuery(hql).setParameter(0, name).uniqueResult();
     }
 
     public Product queryByID(String id) {

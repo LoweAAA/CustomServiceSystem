@@ -2,6 +2,7 @@ package com.givemefive.customerservicesystem.model;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.util.Collection;
 
 @Entity
 @Table(name = "product", schema = "CustomerSurvice", catalog = "" )
@@ -11,6 +12,9 @@ public class Product {
     private String productModel;
     private String productState;
     private Date productCreationTime;
+    private String categoryId;
+    private Category categoryByCategoryId;
+    private Collection<ProductQuestion> productQuestionsByProductId;
 
     @Id
     @Column(name = "product_id")
@@ -87,5 +91,34 @@ public class Product {
         result = 31 * result + (productState != null ? productState.hashCode() : 0);
         result = 31 * result + (productCreationTime != null ? productCreationTime.hashCode() : 0);
         return result;
+    }
+
+    @Basic
+    @Column(name = "category_id")
+    public String getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(String categoryId) {
+        this.categoryId = categoryId;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "category_id", referencedColumnName = "category_id")
+    public Category getCategoryByCategoryId() {
+        return categoryByCategoryId;
+    }
+
+    public void setCategoryByCategoryId(Category categoryByCategoryId) {
+        this.categoryByCategoryId = categoryByCategoryId;
+    }
+
+    @OneToMany(mappedBy = "productByProductName")
+    public Collection<ProductQuestion> getProductQuestionsByProductId() {
+        return productQuestionsByProductId;
+    }
+
+    public void setProductQuestionsByProductId(Collection<ProductQuestion> productQuestionsByProductId) {
+        this.productQuestionsByProductId = productQuestionsByProductId;
     }
 }

@@ -1,6 +1,7 @@
 package com.givemefive.customerservicesystem.model;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 @Table(name="user")
@@ -13,6 +14,8 @@ public class User {
     private String userContactInformation;
     private String userMail;
     private String userRemarks;
+    private Collection<CsEvaluation> csEvaluationsByUserId;
+    private Collection<Record> recordsByUserId;
 
     @Id
     @Column(name = "user_id", nullable = false, length = 20)
@@ -126,5 +129,23 @@ public class User {
         result = 31 * result + (userMail != null ? userMail.hashCode() : 0);
         result = 31 * result + (userRemarks != null ? userRemarks.hashCode() : 0);
         return result;
+    }
+
+    @OneToMany(mappedBy = "userByCsEvaluationUserId")
+    public Collection<CsEvaluation> getCsEvaluationsByUserId() {
+        return csEvaluationsByUserId;
+    }
+
+    public void setCsEvaluationsByUserId(Collection<CsEvaluation> csEvaluationsByUserId) {
+        this.csEvaluationsByUserId = csEvaluationsByUserId;
+    }
+
+    @OneToMany(mappedBy = "userByRecordUserId")
+    public Collection<Record> getRecordsByUserId() {
+        return recordsByUserId;
+    }
+
+    public void setRecordsByUserId(Collection<Record> recordsByUserId) {
+        this.recordsByUserId = recordsByUserId;
     }
 }

@@ -12,6 +12,19 @@ public class ProductImpl implements ProductService {
     @Autowired
     private ProductDao productDao;
 
+/*
+    public String loginConfirm(String id, String password) {
+        CustomerService customerService = customerseviceDao.queryByID(id);
+        if (customerService == null)
+            return null;
+        if (customerService.getCsPassword().equals(password))
+            return customerService;
+        else {
+            return null;
+        }
+    }
+*/
+
     public void addProduct(Product product){
         productDao.save(product);
     }
