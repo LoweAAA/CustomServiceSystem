@@ -94,7 +94,7 @@ public class Product {
     }
 
     @Basic
-    @Column(name = "category_id")
+    @Column(name = "category_id",insertable = false,updatable = false)
     public String getCategoryId() {
         return categoryId;
     }

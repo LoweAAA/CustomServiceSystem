@@ -27,7 +27,7 @@ public class Repository {
     }
 
     @Basic
-    @Column(name = "pro_question_id")
+    @Column(name = "pro_question_id",insertable = false,updatable = false)
     public String getProQuestionId() {
         return proQuestionId;
     }

@@ -27,7 +27,7 @@ public class Package {
     }
 
     @Basic
-    @Column(name = "package_tem_id")
+    @Column(name = "package_tem_id",insertable = false,updatable = false)
     public String getPackageTemId() {
         return packageTemId;
     }
@@ -37,7 +37,7 @@ public class Package {
     }
 
     @Basic
-    @Column(name = "company_id")
+    @Column(name = "company_id",insertable = false,updatable = false)
     public String getCompanyId() {
         return companyId;
     }

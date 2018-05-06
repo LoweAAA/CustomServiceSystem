@@ -33,7 +33,7 @@ public class Schedule {
     }
 
     @Basic
-    @Column(name = "schedule_cs_id")
+    @Column(name = "schedule_cs_id",insertable = false,updatable = false)
     public String getScheduleCsId() {
         return scheduleCsId;
     }
