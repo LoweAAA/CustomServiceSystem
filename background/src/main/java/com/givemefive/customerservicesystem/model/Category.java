@@ -10,7 +10,9 @@ public class Category {
     private String companyId;
     private Company companyByCompanyId;
     private Collection<Product> productsByCategoryId;
+    private String companyName;
 
+    @Basic
     @Id
     @Column(name = "category_id")
     public String getCategoryId() {
@@ -63,6 +65,7 @@ public class Category {
         result = 31 * result + (companyId != null ? companyId.hashCode() : 0);
         return result;
     }
+/*
 
     @ManyToOne
     @JoinColumn(name = "company_id", referencedColumnName = "company_id", nullable = false)
@@ -81,5 +84,16 @@ public class Category {
 
     public void setProductsByCategoryId(Collection<Product> productsByCategoryId) {
         this.productsByCategoryId = productsByCategoryId;
+    }
+*/
+
+    @Basic
+    @Column(name = "company_name")
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
     }
 }

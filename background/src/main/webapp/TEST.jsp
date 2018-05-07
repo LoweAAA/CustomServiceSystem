@@ -12,14 +12,14 @@
 </head>
 <body>
 
-<form action="loginconfirm" method="post">
-    yourid:
-    <input type="text" name="id">
+<form action="queryProductByCom" method="post">
+    name:
+    <input type="text" name="name">
     <br>
-    password:
-    <input type="text" name="password">
+    <%--password:
+    <input type="text" name="password">--%>
     <br>
-    <input type="submit" value="Login">
+    <input type="submit" value="submit">
 </form>
 
 </body>

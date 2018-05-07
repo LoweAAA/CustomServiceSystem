@@ -3,27 +3,24 @@ package com.givemefive.customerservicesystem.service.impl;
 
 import com.givemefive.customerservicesystem.model.CustomerService;
 import com.givemefive.customerservicesystem.repostory.CustomerserviceDao;
-import com.givemefive.customerservicesystem.service.Loginservice;
+import com.givemefive.customerservicesystem.service.CSservice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class LoginserviceImpl implements Loginservice {
+public class CSserviceImpl implements CSservice {
 
     @Autowired
-    private CustomerserviceDao customerseviceDao;
+    private CustomerserviceDao customerserviceDao;
 
 @Override
     public CustomerService loginConfirm(String id, String password) {
-    System.out.println("inside 1! id="+id);
-        CustomerService customerService = customerseviceDao.queryByID(id);
-    System.out.println("inside 3!");
+        CustomerService customerService = customerserviceDao.queryByID(id);
         if (customerService == null)
             return null;
         if (customerService.getCsPassword().equals(password)){
-            System.out.println("inside 4!");
             return customerService;
         }
         else {
@@ -33,15 +30,26 @@ public class LoginserviceImpl implements Loginservice {
 
 @Override
     public void addAccount(CustomerService customerService) {
-        customerseviceDao.save(customerService);
+        customerserviceDao.save(customerService);
     }
 @Override
     public void delete(String id) {
-        customerseviceDao.delete(id);
+        customerserviceDao.delete(id);
     }
 
 @Override
     public void update(CustomerService customerService) {
-        customerseviceDao.update(customerService);
+        customerserviceDao.update(customerService);
+    }
+
+    @Override
+    public List<CustomerService> byCompanyName(String name) {
+        List<CustomerService> cslist = customerserviceDao.queryByComName(name);
+        if(cslist == null){
+            return null;
+        }
+        else{
+            return cslist;
+        }
     }
 }

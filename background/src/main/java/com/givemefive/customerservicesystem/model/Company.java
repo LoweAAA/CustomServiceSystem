@@ -134,7 +134,7 @@ public class Company {
         result = 31 * result + companyBalance;
         return result;
     }
-
+/*
     @OneToMany(mappedBy = "companyByCompanyId")
     public Collection<Advertisement> getAdvertisementsByCompanyId() {
         return advertisementsByCompanyId;
@@ -162,14 +162,7 @@ public class Company {
         this.comlsByCompanyId = comlsByCompanyId;
     }
 
-    @OneToMany(mappedBy = "companyByCsCompanyId")
-    public Collection<CustomerService> getCustomerServicesByCompanyId() {
-        return customerServicesByCompanyId;
-    }
 
-    public void setCustomerServicesByCompanyId(Collection<CustomerService> customerServicesByCompanyId) {
-        this.customerServicesByCompanyId = customerServicesByCompanyId;
-    }
 
     @OneToMany(mappedBy = "companyByCompanyId")
     public Collection<Package> getPackagesByCompanyId() {
@@ -178,5 +171,5 @@ public class Company {
 
     public void setPackagesByCompanyId(Collection<Package> packagesByCompanyId) {
         this.packagesByCompanyId = packagesByCompanyId;
-    }
+    }*/
 }

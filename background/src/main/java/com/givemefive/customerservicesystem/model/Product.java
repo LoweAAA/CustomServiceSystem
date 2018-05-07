@@ -15,9 +15,12 @@ public class Product {
     private String categoryId;
     private Category categoryByCategoryId;
     private Collection<ProductQuestion> productQuestionsByProductId;
+    private String categoryName;
+    private String companyName;
 
+    @Basic
     @Id
-    @Column(name = "product_id")
+    @Column(name = "product_id", nullable = false, length = 20)
     public String getProductId() {
         return productId;
     }
@@ -27,7 +30,7 @@ public class Product {
     }
 
     @Basic
-    @Column(name = "product_name")
+    @Column(name = "product_name", nullable = false, length = 20)
     public String getProductName() {
         return productName;
     }
@@ -37,7 +40,7 @@ public class Product {
     }
 
     @Basic
-    @Column(name = "product_model")
+    @Column(name = "product_model", nullable = false, length = 20)
     public String getProductModel() {
         return productModel;
     }
@@ -47,7 +50,7 @@ public class Product {
     }
 
     @Basic
-    @Column(name = "product_state")
+    @Column(name = "product_state", nullable = false, length = 20)
     public String getProductState() {
         return productState;
     }
@@ -57,7 +60,7 @@ public class Product {
     }
 
     @Basic
-    @Column(name = "product_creation_time")
+    @Column(name = "product_creation_time", nullable = false, length = 20)
     public Date getProductCreationTime() {
         return productCreationTime;
     }
@@ -83,6 +86,7 @@ public class Product {
         return true;
     }
 
+
     @Override
     public int hashCode() {
         int result = productId != null ? productId.hashCode() : 0;
@@ -93,15 +97,7 @@ public class Product {
         return result;
     }
 
-    @Basic
-    @Column(name = "category_id",insertable = false,updatable = false)
-    public String getCategoryId() {
-        return categoryId;
-    }
-
-    public void setCategoryId(String categoryId) {
-        this.categoryId = categoryId;
-    }
+/*
 
     @ManyToOne
     @JoinColumn(name = "category_id", referencedColumnName = "category_id")
@@ -113,6 +109,8 @@ public class Product {
         this.categoryByCategoryId = categoryByCategoryId;
     }
 
+
+
     @OneToMany(mappedBy = "productByProductName")
     public Collection<ProductQuestion> getProductQuestionsByProductId() {
         return productQuestionsByProductId;
@@ -121,4 +119,26 @@ public class Product {
     public void setProductQuestionsByProductId(Collection<ProductQuestion> productQuestionsByProductId) {
         this.productQuestionsByProductId = productQuestionsByProductId;
     }
+*/
+
+    @Basic
+    @Column(name = "category_name")
+    public String getCategoryName() {
+        return categoryName;
+    }
+
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
+    }
+
+    @Basic
+    @Column(name = "company_name")
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+
 }

@@ -89,6 +89,7 @@ public class Operation {
         result = 31 * result + (packageId != null ? packageId.hashCode() : 0);
         return result;
     }
+/*
 
     @ManyToOne
     @JoinColumn(name = "package_id", referencedColumnName = "package_id", nullable = false)
@@ -99,4 +100,6 @@ public class Operation {
     public void setPackageByPackageId(Package packageByPackageId) {
         this.packageByPackageId = packageByPackageId;
     }
+*/
+
 }

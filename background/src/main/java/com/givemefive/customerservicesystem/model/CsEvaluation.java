@@ -12,6 +12,7 @@ public class CsEvaluation {
     private User userByCsEvaluationUserId;
     private CustomerService customerServiceByCsEvaluationCsId;
 
+    @Basic
     @Id
     @Column(name = "cs_evaluation_id",insertable = false,updatable = false)
     public String getCsEvaluationId() {
@@ -78,7 +79,7 @@ public class CsEvaluation {
         result = 31 * result + (csEvaluationCsId != null ? csEvaluationCsId.hashCode() : 0);
         return result;
     }
-
+/*
     @ManyToOne
     @JoinColumn(name = "cs_evaluation_user_id", referencedColumnName = "user_id", nullable = false)
     public User getUserByCsEvaluationUserId() {
@@ -98,4 +99,5 @@ public class CsEvaluation {
     public void setCustomerServiceByCsEvaluationCsId(CustomerService customerServiceByCsEvaluationCsId) {
         this.customerServiceByCsEvaluationCsId = customerServiceByCsEvaluationCsId;
     }
+    */
 }

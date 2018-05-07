@@ -105,6 +105,7 @@ public class Package {
         result = 31 * result + (effectiveTime != null ? effectiveTime.hashCode() : 0);
         return result;
     }
+/*
 
     @OneToMany(mappedBy = "packageByPackageId")
     public Collection<Operation> getOperationsByPackageId() {
@@ -134,4 +135,7 @@ public class Package {
     public void setCompanyByCompanyId(Company companyByCompanyId) {
         this.companyByCompanyId = companyByCompanyId;
     }
+*/
+
+
 }

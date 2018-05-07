@@ -14,6 +14,7 @@ public class Record {
     private User userByRecordUserId;
     private CustomerService customerServiceByRecordCsId;
 
+    @Basic
     @Id
     @Column(name = "record_id", nullable = false, length = 20)
     public String getRecordId() {
@@ -91,7 +92,7 @@ public class Record {
         result = 31 * result + (recordCsId != null ? recordCsId.hashCode() : 0);
         return result;
     }
-
+/*
     @ManyToOne
     @JoinColumn(name = "record_user_id", referencedColumnName = "user_id", nullable = false)
     public User getUserByRecordUserId() {
@@ -111,4 +112,5 @@ public class Record {
     public void setCustomerServiceByRecordCsId(CustomerService customerServiceByRecordCsId) {
         this.customerServiceByRecordCsId = customerServiceByRecordCsId;
     }
+    */
 }
