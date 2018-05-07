@@ -119,20 +119,47 @@
                   </thead>
                   <tbody>
                     <tr>
+                      <td>早上好</td>
+                      <td>你好/早/早安</td>
                       <td>张三</td>
-                      <td>18-3-18</td>
-                      <td>事假</td>
-                      <td>1</td>
+                      <td>2018-3-1</td>
                       <td>
                         <div class="btn-group" role="group" aria-label="...">
-                          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#permit">批准</button>
-                          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#refuse">驳回</button>
+                          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#permit">编辑</button>
+                          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#refuse">删除</button>
                         </div>
                       </td>
                     </tr>
                   </tbody>
                 </table>
               </div>
+      </div>
+    </div>
+
+    <!--相似问题编辑-->
+    <div id="permit" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="gridSystemModalLabel">来自网页的消息</h4>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="message-text" class="control-label">通用词汇:</label>
+                <textarea class="form-control" id="message-text"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="message-text" class="control-label">相似词汇:</label>
+                <textarea class="form-control" id="message-text"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">录入</button>
+          </div>
+        </div>
       </div>
     </div>
 
