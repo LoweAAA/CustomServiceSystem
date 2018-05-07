@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.sql.SQLException;
 import java.util.Map;
 import java.util.HashMap;
 
@@ -24,6 +26,7 @@ public class cslogin {
         System.out.println("id="+id+" password="+password);
         Map map=new HashMap();
         CustomerService customerService=loginService.loginConfirm(id,password);
+        System.out.println("Service is OK!");
         map.put("data",customerService);
         if(customerService==null){
             map.put("status","账号密码错误");    //将key-value存入map中
@@ -31,9 +34,11 @@ public class cslogin {
         else map.put("status","账号密码正确");
         return map;
     }
-
+/*
     @RequestMapping("login")
     public String login(){
         return "cs_login";
     }
+
+    */
 }

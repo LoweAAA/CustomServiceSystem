@@ -67,7 +67,8 @@ public class ProductQuestion {
     }
 
     @ManyToOne
-    @JoinColumn(name = "product_name", referencedColumnName = "product_id", nullable = false)
+    @JoinColumn(name = "product_name", referencedColumnName = "product_id", nullable = false,insertable = false,updatable = false
+    )
     public Product getProductByProductName() {
         return productByProductName;
     }

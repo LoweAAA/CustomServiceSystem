@@ -17,11 +17,15 @@ public class LoginserviceImpl implements Loginservice {
 
 @Override
     public CustomerService loginConfirm(String id, String password) {
+    System.out.println("inside 1! id="+id);
         CustomerService customerService = customerseviceDao.queryByID(id);
+    System.out.println("inside 3!");
         if (customerService == null)
             return null;
-        if (customerService.getCsPassword().equals(password))
+        if (customerService.getCsPassword().equals(password)){
+            System.out.println("inside 4!");
             return customerService;
+        }
         else {
             return null;
         }

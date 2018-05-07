@@ -14,5 +14,5 @@ public interface CustomerserviceDao {
 
     void delete(String id);
 
-    public CustomerService queryByID(String id);
+    CustomerService queryByID(String id);
 }

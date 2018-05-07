@@ -12,7 +12,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="../lib/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../lib/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="../secondpage/second.css" rel="stylesheet">
@@ -103,11 +103,92 @@
                 </div>
               </div>
               <div class="my-button">
-                <button type="button" class="btn btn-primary btn-i">客服问题统计</button><br>
-                <button type="button" class="btn btn-primary btn-i">新增问题</button>
+                <button type="button" class="btn btn-primary btn-i" data-toggle="modal" data-target="#manquestion">客服问题统计</button><br>
+                <button type="button" class="btn btn-primary btn-i" data-toggle="modal" data-target="#newquestion">新增问题</button>
               </div>
         </div>
         <div class="table-responsive page-heart">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>问题</th>
+                      <th>回答</th>
+                      <th>关键词</th>
+                      <th>操作</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>手机进水</td>
+                      <td>不要开机，到维修店修理</td>
+                      <td>进水</td>
+                      <td>
+                        <div class="btn-group" role="group" aria-label="...">
+                          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#edit">编辑</button>
+                          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#refuse">删除</button>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+      </div>
+    </div>
+
+    <!--编辑-->
+    <div id="edit" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="gridSystemModalLabel">来自网页的消息</h4>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="message-text" class="control-label">问题:</label>
+                <textarea class="form-control" id="message-text"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="message-text" class="control-label">回答：</label>
+                <textarea class="form-control" id="message-text"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="message-text" class="control-label">关键词:</label>
+                <textarea class="form-control" id="message-text"></textarea>
+              </div>
+              <div class="classical">
+                  <span>产品类别：</span>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle btn-m" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    手机<span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">手机</a></li>
+                      <li><a href="#">笔记本电脑</a></li>
+                      <li><a href="#">平板电脑</a></li>
+                    </ul>
+                  </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">录入</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!--客服问题统计-->
+    <div id="manquestion" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="gridSystemModalLabel">来自网页的消息</h4>
+          </div>
+          <div class="modal-body">
+            <div class="table-responsive page-heart">
                 <table class="table table-striped">
                   <thead>
                     <tr>
@@ -126,18 +207,47 @@
                       <td>进水</td>
                       <td>
                         <div class="btn-group" role="group" aria-label="...">
-                          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#permit">批准</button>
-                          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#refuse">驳回</button>
+                          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#manquestion">添加</button>
+                          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#delete">删除</button>
                         </div>
                       </td>
                     </tr>
                   </tbody>
                 </table>
               </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">回复</button>
+          </div>
+        </div>
       </div>
     </div>
     
-
+    <!--管理员增加问题-->
+    <div class="modal fade" id="newquestion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">新增问题</h4>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="form-group">
+                    <label for="recipient-name" class="control-label">问题描述:</label>
+                    <input type="text" class="form-control" id="recipient-name">
+                  </div>
+                  <div class="form-group">
+                    <label for="message-text" class="control-label">问题答案:</label>
+                    <textarea class="form-control" id="message-text"></textarea>
+                  </div>
+                  <button type="button" class="btn btn-default btn-i button-m">取消</button>
+                  <button type="button" class="btn btn-primary btn-i button-m">录入</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

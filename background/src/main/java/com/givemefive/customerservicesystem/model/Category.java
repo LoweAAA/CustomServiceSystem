@@ -32,7 +32,7 @@ public class Category {
     }
 
     @Basic
-    @Column(name = "company_id")
+    @Column(name = "company_id",insertable = false,updatable = false)
     public String getCompanyId() {
         return companyId;
     }

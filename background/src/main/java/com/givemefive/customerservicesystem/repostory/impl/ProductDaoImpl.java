@@ -41,10 +41,12 @@ public class ProductDaoImpl implements ProductDao {
         return session().createQuery(hql).list();
     }
 
+    /*
     public String namequeryBycompanyname(String name){
         hql = "SELECT p.name FROM Product p ,Category c WHERE (p.category_id = c.category_id AND c.company_id = ?)";
         return (String) session().createQuery(hql).setParameter(0, name).uniqueResult();
     }
+*/
 
     public Product queryByID(String id) {
         hql = "FROM CustomerService l WHERE l.id = ?";

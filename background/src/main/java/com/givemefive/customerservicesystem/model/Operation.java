@@ -53,7 +53,7 @@ public class Operation {
     }
 
     @Basic
-    @Column(name = "package_id")
+    @Column(name = "package_id",insertable = false,updatable = false)
     public String getPackageId() {
         return packageId;
     }

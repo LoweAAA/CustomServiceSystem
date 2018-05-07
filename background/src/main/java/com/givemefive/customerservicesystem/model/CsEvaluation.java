@@ -13,7 +13,7 @@ public class CsEvaluation {
     private CustomerService customerServiceByCsEvaluationCsId;
 
     @Id
-    @Column(name = "cs_evaluation_id")
+    @Column(name = "cs_evaluation_id",insertable = false,updatable = false)
     public String getCsEvaluationId() {
         return csEvaluationId;
     }
@@ -33,7 +33,7 @@ public class CsEvaluation {
     }
 
     @Basic
-    @Column(name = "cs_evaluation_user_id")
+    @Column(name = "cs_evaluation_user_id",insertable = false,updatable = false)
     public String getCsEvaluationUserId() {
         return csEvaluationUserId;
     }
@@ -43,7 +43,7 @@ public class CsEvaluation {
     }
 
     @Basic
-    @Column(name = "cs_evaluation_cs_id")
+    @Column(name = "cs_evaluation_cs_id",insertable = false,updatable = false)
     public String getCsEvaluationCsId() {
         return csEvaluationCsId;
     }

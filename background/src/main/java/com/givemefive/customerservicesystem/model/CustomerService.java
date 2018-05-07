@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
-@Table(name = "customer_service", schema = "CustomerSurvice", catalog = "")
+@Table(name = "customer_service", schema = "CustomerSurvice")
 public class CustomerService {
     private String csId;
     private String csName;
@@ -68,7 +68,7 @@ public class CustomerService {
     }
 
     @Basic
-    @Column(name = "cs_company_ID", nullable = false, length = 20)
+    @Column(name = "cs_company_ID", nullable = false, length = 20,insertable = false,updatable = false)
     public String getCsCompanyId() {
         return csCompanyId;
     }
@@ -76,6 +76,7 @@ public class CustomerService {
     public void setCsCompanyId(String csCompanyId) {
         this.csCompanyId = csCompanyId;
     }
+
 
     @Override
     public boolean equals(Object o) {
