@@ -1,0 +1,21 @@
+the data exchanged shall be of json format
+and, which contains at least TWO keys: Document key("d") and Conversation key("c")
+{
+	"d": {
+		(STRING: ARRAY OF STRING,)*
+	},
+	"c": {
+		(STRING: STRING,)*
+	}
+}
+[Example:
+	{
+		"d": {
+			"d01": ["keyword0", "keyword1"],
+			"d02": ["keyword0"]
+		}
+		"c": {
+			"c01": "hello world!"
+		}
+	}
+-end example]
