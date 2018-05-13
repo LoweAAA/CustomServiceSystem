@@ -6,16 +6,23 @@ and, which contains at least TWO keys: Document key("d") and Conversation key("c
 	},
 	"c": {
 		(STRING: STRING,)*
-	}
+	},
+	"q": [
+		(STRING,)*
+	]
 }
 [Example:
 	{
 		"d": {
 			"d01": ["keyword0", "keyword1"],
 			"d02": ["keyword0"]
-		}
+		},
 		"c": {
 			"c01": "hello world!"
-		}
+		},
+		"q": [
+			"query0",
+			"query1"
+		]
 	}
 -end example]
