@@ -1,28 +1,5 @@
-the data exchanged shall be of json format
-and, which contains at least TWO keys: Document key("d") and Conversation key("c")
-{
-	"d": {
-		(STRING: ARRAY OF STRING,)*
-	},
-	"c": {
-		(STRING: STRING,)*
-	},
-	"q": [
-		(STRING,)*
-	]
-}
-[Example:
-	{
-		"d": {
-			"d01": ["keyword0", "keyword1"],
-			"d02": ["keyword0"]
-		},
-		"c": {
-			"c01": "hello world!"
-		},
-		"q": [
-			"query0",
-			"query1"
-		]
-	}
--end example]
+how to query the answer, the final product can be deploied in one computer or serveral within or not the same computer as the JAVA client
+you need to use http scheme and specified keys, it will look like below:
+	http://<server ip>[:<port>]/?q=<query>&pid=<product id>
+here is a example:
+	http://localhost:44444/?q=hi&pid=007
