@@ -220,6 +220,14 @@ h4 {
     color: #f79263;
 }
 
+.infobox-blue {
+    color: #0e87f3;
+}
+
+.infobox-yellow {
+    color: #f52596;
+}
+
 .infobox>.infobox-data {
     display: inline-block;
     border: 0;
@@ -299,7 +307,7 @@ h4 {
 }
 
 .classical{
-  margin: 20px;
+  margin: 30px 0px;
 }
 
 .my-button{
