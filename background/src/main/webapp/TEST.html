@@ -1,0 +1,56 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: Tony
+  Date: 2018/4/9
+  Time: 9:47
+  To change this template use File | Settings | File Templates.
+--%>
+//<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>TEST</title>
+</head>
+<body>
+<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js"></script>
+<form method="post">
+    email:
+    <input type="text" name="name" id="commail">
+    <br>
+    password:
+    <input type="text" name="password" id="compassword">
+    <br>
+    <input type="button" value="submit" id="com_submit">
+</form>
+
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#com_submit").click(function(){
+            $.ajax({
+                type: "POST",
+                data: {"com_mail": $("#commail").val(), "com_password": $("#compassword").val()},
+                url: "ComLoginconfirm",
+                //contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    // changeToTable(data);
+                    $.each(data, function(i,item){
+                        if(i=="data"){
+                            var id = item;
+                            var url = "index.html?com_id=" + id;
+                            window.location.href =url;
+                        }
+
+                    });
+
+                },
+                error: function () {
+                    // $("#logininfo").text("请求超时");
+                    alert("fail");
+                },
+            });
+        });
+    });
+</script>
+</body>
+</html>

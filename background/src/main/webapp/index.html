@@ -1,0 +1,57 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<body>
+<h2>Hello World!</h2>
+<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js"></script>
+<script type="text/javascript">
+    var url = location.search; //获取url中"?"符后的字串 ('?modFlag=business&role=1')
+
+    if ( url.indexOf( "?" ) != -1 ) {
+        var str = url.substr(1); //substr()方法返回从参数值开始到结束的字符串；
+        var strs = str.split( "&" );
+        var theRequest = new Object();
+        for (var i = 0; i < strs.length; i++) {
+            theRequest[strs[i].split("=")[0]] = unescape( strs[i].split("=")[1] );
+        }
+        var id=theRequest["com_id"];
+        alert(id);
+        $(document).ready(function() {
+            $.ajax({
+                type: "POST",
+                url: "getinfo",
+                data: {"com_id": JSON.parse(id)},
+                //async: true,//同步
+                //contentType: "application/json; charset=utf-8",
+                //dataType: "text",
+                success: function (data) {
+                    $.each(data, function (i,n) {
+                        if (i == "data") {
+
+                            $("#comid").append(n.companyName);
+
+                            //$("#myModal").modal("show");
+
+                        }
+
+                    });
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert("fault"+textStatus);
+                    alert(XMLHttpRequest.status);
+                    alert(XMLHttpRequest.readyState);
+                    alert(errorThrown)
+                }
+            });
+        })
+    }
+</script>
+<form>
+    <div  name="com_id">
+        <p id="comid"></p>
+    </div><br>
+    <input id="compassword" name="compassword">
+</form>
+
+
+</body>
+</html>

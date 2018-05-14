@@ -9,6 +9,7 @@ import com.givemefive.customerservicesystem.repostory.CustomerserviceDao;
 import com.givemefive.customerservicesystem.repostory.ProductDao;
 import com.givemefive.customerservicesystem.repostory.RecordDao;
 import com.givemefive.customerservicesystem.repostory.TestDao;
+import com.givemefive.customerservicesystem.service.CSservice;
 import com.givemefive.customerservicesystem.service.ProductService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -24,6 +25,9 @@ import java.util.List;
 public class CSDaoTest {
     @Autowired
     private CustomerserviceDao customerserviceDao;
+
+    @Autowired
+    private CSservice cSservice;
 
     @Autowired
     private ProductService productService;
@@ -44,6 +48,16 @@ public class CSDaoTest {
         for(Product a : productlist) {
             System.out.println(a.getProductName());
         }
+    }
+
+
+    @Test
+    public void add(){
+        CustomerService customerService = new CustomerService("Chen","ASUS","15512345678","asus@163.com",
+                "2","123");
+        cSservice.addAccount(customerService);
+
+            System.out.println(cSservice.getAll());
     }
 
 

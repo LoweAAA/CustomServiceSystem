@@ -10,6 +10,8 @@ public interface CSservice {
 
     void addAccount(CustomerService customerService);
 
+    List<CustomerService> getAll();
+
     void delete(String id);
 
     void update(CustomerService customerServiceervice);

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>问题管理</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../lib/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../secondpage/second.css" rel="stylesheet">
+</head>
+
+<body>
+  	<div style="text-align:center;clear:both"></div>
+    <!--顶栏-->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">personal</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+	  <!--*侧边栏-->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          	<ul id="accordion" class="accordion">
+          		<li>
+          			<div class="link">
+                  <a href="../secondpage/second.html"><i class="fa fa-mobile"></i>数据统计</a>
+                </div>
+          		</li>
+      				<li>
+      					<div class="link"><i class="fa fa-paint-brush"></i>客服管理<i class="fa fa-chevron-down"></i></div>
+      					<ul class="submenu">
+      						<li><a href="../operator/schedual.html">排班管理</a></li>
+                  <li><a href="../operator/leave.html">请假管理</a></li>
+                  <li><a href="../operator/quality.html">质量监测</a></li>
+      					</ul>
+      				</li>
+      				<li>
+      					<div class="link"><i class="fa fa-code"></i>知识库<i class="fa fa-chevron-down"></i></div>
+      					<ul class="submenu">
+      						<li><a href="information.html">信息统计</a></li>
+                  <li><a href="#">问题管理</a></li>
+                  <li><a href="similar.html">相似词汇</a></li>
+      					</ul>
+      				</li>
+				      <li>
+          			<div class="link">
+                  <a href="../secondpage/account.html"><i class="fa fa-globe"></i>账户信息</a>
+                </div>
+          		</li>
+			      </ul>
+        </div>
+
+        <!--统计数据页面
+        ==============================-->
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">问题管理</h1>
+          <div class="container" style="margin-bottom: 20px;">
+              <div class="search-ditail">
+                <div class="classical">
+                  <span>产品类别：</span>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle btn-m" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      A机型 <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">A机型</a></li>
+                      <li><a href="#">B机型</a></li>
+                      <li><a href="#">C机型</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="classical">
+                  <span>产品类型：</span>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle btn-m" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      x7 <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">x7</a></li>
+                      <li><a href="#">x8</a></li>
+                      <li><a href="#">x9</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="my-button">
+                <button type="button" class="btn btn-primary btn-i" data-toggle="modal" data-target="#manquestion">客服问题统计</button><br>
+                <button type="button" class="btn btn-primary btn-i" data-toggle="modal" data-target="#newquestion">新增问题</button>
+              </div>
+        </div>
+        <div class="table-responsive page-heart">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>问题</th>
+                      <th>回答</th>
+                      <th>关键词</th>
+                      <th>操作</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>手机进水</td>
+                      <td>不要开机，到维修店修理</td>
+                      <td>进水</td>
+                      <td>
+                        <div class="btn-group" role="group" aria-label="...">
+                          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#edit">编辑</button>
+                          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#refuse">删除</button>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+      </div>
+    </div>
+
+    <!--编辑-->
+    <div id="edit" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="gridSystemModalLabel">来自网页的消息</h4>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="message-text" class="control-label">问题:</label>
+                <textarea class="form-control" id="message-text"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="message-text" class="control-label">回答：</label>
+                <textarea class="form-control" id="message-text"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="message-text" class="control-label">关键词:</label>
+                <textarea class="form-control" id="message-text"></textarea>
+              </div>
+              <div class="classical">
+                  <span>产品类别：</span>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle btn-m" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    手机<span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">手机</a></li>
+                      <li><a href="#">笔记本电脑</a></li>
+                      <li><a href="#">平板电脑</a></li>
+                    </ul>
+                  </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">录入</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!--客服问题统计-->
+    <div id="manquestion" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="gridSystemModalLabel">来自网页的消息</h4>
+          </div>
+          <div class="modal-body">
+            <div class="table-responsive page-heart">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>问题</th>
+                      <th>答案</th>
+                      <th>类型</th>
+                      <th>关键词</th>
+                      <th>操作</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>手机进水</td>
+                      <td>不要开机，到维修店修理</td>
+                      <td>手机</td>
+                      <td>进水</td>
+                      <td>
+                        <div class="btn-group" role="group" aria-label="...">
+                          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#manquestion">添加</button>
+                          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#delete">删除</button>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">回复</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!--管理员增加问题-->
+    <div class="modal fade" id="newquestion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">新增问题</h4>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="form-group">
+                    <label for="recipient-name" class="control-label">问题描述:</label>
+                    <input type="text" class="form-control" id="recipient-name">
+                  </div>
+                  <div class="form-group">
+                    <label for="message-text" class="control-label">问题答案:</label>
+                    <textarea class="form-control" id="message-text"></textarea>
+                  </div>
+                  <button type="button" class="btn btn-default btn-i button-m">取消</button>
+                  <button type="button" class="btn btn-primary btn-i button-m">录入</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../lib/js/jquery-3.2.1.js"><\/script>')</script>
+    <script type="text/javascript" src="../lib/js/echarts.min.js"></script>
+    <script src="../lib/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../lib/js/second.js"></script>
+</body>
+
+</html>

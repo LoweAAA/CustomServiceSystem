@@ -37,6 +37,11 @@ public class CSserviceImpl implements CSservice {
         customerserviceDao.delete(id);
     }
 
+    @Override
+    public List<CustomerService> getAll(){
+    return customerserviceDao.getAll();
+    }
+
 @Override
     public void update(CustomerService customerService) {
         customerserviceDao.update(customerService);
