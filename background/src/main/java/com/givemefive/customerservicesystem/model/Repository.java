@@ -145,7 +145,7 @@ public class Repository {
         result = 31 * result + (repositoryEditor != null ? repositoryEditor.hashCode() : 0);
         return result;
     }
-
+/*
     @ManyToOne
     @JoinColumn(name = "pro_question_id", referencedColumnName = "pro_question_id")
     public ProductQuestion getProductQuestionByProQuestionId() {
@@ -155,4 +155,6 @@ public class Repository {
     public void setProductQuestionByProQuestionId(ProductQuestion productQuestionByProQuestionId) {
         this.productQuestionByProQuestionId = productQuestionByProQuestionId;
     }
+    */
+
 }

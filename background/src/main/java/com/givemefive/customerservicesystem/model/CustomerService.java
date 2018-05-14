@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
-@Table(name = "customer_service", schema = "CustomerSurvice")
+@Table(name = "customer_service", schema = "CustomerSurvice", catalog = "")
 public class CustomerService {
     private String csId;
     private String csName;
@@ -16,7 +16,36 @@ public class CustomerService {
     private Company companyByCsCompanyId;
     private Collection<Record> recordsByCsId;
     private Collection<Schedule> schedulesByCsId;
+   /* @OneToMany(mappedBy = "customerServiceByCsEvaluationCsId")
+    public Collection<CsEvaluation> getCsEvaluationsByCsId() {
+        return csEvaluationsByCsId;
+    }
 
+    public void setCsEvaluationsByCsId(Collection<CsEvaluation> csEvaluationsByCsId) {
+        this.csEvaluationsByCsId = csEvaluationsByCsId;
+    }
+
+
+    @OneToMany(mappedBy = "customerServiceByRecordCsId")
+    public Collection<Record> getRecordsByCsId() {
+        return recordsByCsId;
+    }
+
+    public void setRecordsByCsId(Collection<Record> recordsByCsId) {
+        this.recordsByCsId = recordsByCsId;
+    }
+
+    @OneToMany(mappedBy = "customerServiceByScheduleCsId")
+    public Collection<Schedule> getSchedulesByCsId() {
+        return schedulesByCsId;
+    }
+
+    public void setSchedulesByCsId(Collection<Schedule> schedulesByCsId) {
+        this.schedulesByCsId = schedulesByCsId;
+    }*/
+    private String csCompanyName;
+
+    @Basic
     @Id
     @Column(name = "cs_id", nullable = false, length = 20)
     public String getCsId() {
@@ -67,16 +96,16 @@ public class CustomerService {
         this.csContactInformation = csContactInformation;
     }
 
+
     @Basic
-    @Column(name = "cs_company_ID", nullable = false, length = 20,insertable = false,updatable = false)
-    public String getCsCompanyId() {
-        return csCompanyId;
+    @Column(name = "cs_company_Name")
+    public String getCsCompanyName() {
+        return csCompanyName;
     }
 
-    public void setCsCompanyId(String csCompanyId) {
-        this.csCompanyId = csCompanyId;
+    public void setCsCompanyName(String csCompanyName) {
+        this.csCompanyName = csCompanyName;
     }
-
 
     @Override
     public boolean equals(Object o) {
@@ -107,40 +136,4 @@ public class CustomerService {
         return result;
     }
 
-    @OneToMany(mappedBy = "customerServiceByCsEvaluationCsId")
-    public Collection<CsEvaluation> getCsEvaluationsByCsId() {
-        return csEvaluationsByCsId;
-    }
-
-    public void setCsEvaluationsByCsId(Collection<CsEvaluation> csEvaluationsByCsId) {
-        this.csEvaluationsByCsId = csEvaluationsByCsId;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "cs_company_ID", referencedColumnName = "company_id", nullable = false)
-    public Company getCompanyByCsCompanyId() {
-        return companyByCsCompanyId;
-    }
-
-    public void setCompanyByCsCompanyId(Company companyByCsCompanyId) {
-        this.companyByCsCompanyId = companyByCsCompanyId;
-    }
-
-    @OneToMany(mappedBy = "customerServiceByRecordCsId")
-    public Collection<Record> getRecordsByCsId() {
-        return recordsByCsId;
-    }
-
-    public void setRecordsByCsId(Collection<Record> recordsByCsId) {
-        this.recordsByCsId = recordsByCsId;
-    }
-
-    @OneToMany(mappedBy = "customerServiceByScheduleCsId")
-    public Collection<Schedule> getSchedulesByCsId() {
-        return schedulesByCsId;
-    }
-
-    public void setSchedulesByCsId(Collection<Schedule> schedulesByCsId) {
-        this.schedulesByCsId = schedulesByCsId;
-    }
 }

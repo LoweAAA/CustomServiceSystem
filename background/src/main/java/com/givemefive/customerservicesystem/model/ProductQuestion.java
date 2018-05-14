@@ -12,8 +12,9 @@ public class ProductQuestion {
     private Product productByProductName;
     private Collection<Repository> repositoriesByProQuestionId;
 
+    @Basic
     @Id
-    @Column(name = "pro_question_id")
+    @Column(name = "pro_question_id", nullable = false, length = 20)
     public String getProQuestionId() {
         return proQuestionId;
     }
@@ -66,7 +67,7 @@ public class ProductQuestion {
         return result;
     }
 
-    @ManyToOne
+  /*  @ManyToOne
     @JoinColumn(name = "product_name", referencedColumnName = "product_id", nullable = false,insertable = false,updatable = false
     )
     public Product getProductByProductName() {
@@ -85,4 +86,6 @@ public class ProductQuestion {
     public void setRepositoriesByProQuestionId(Collection<Repository> repositoriesByProQuestionId) {
         this.repositoriesByProQuestionId = repositoriesByProQuestionId;
     }
+    */
+
 }

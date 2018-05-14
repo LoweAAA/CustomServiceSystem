@@ -128,6 +128,7 @@ public class Coml {
         result = 31 * result + (comlEditor != null ? comlEditor.hashCode() : 0);
         return result;
     }
+/*
 
     @ManyToOne
     @JoinColumn(name = "company_id", referencedColumnName = "company_id", nullable = false)
@@ -138,4 +139,6 @@ public class Coml {
     public void setCompanyByCompanyId(Company companyByCompanyId) {
         this.companyByCompanyId = companyByCompanyId;
     }
+*/
+
 }

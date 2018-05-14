@@ -13,5 +13,7 @@ public interface ProductDao {
 
     void delete(String id);
 
-    public Product queryByID(String id);
+    List queryByComName(String name);
+
+    List<Product> queryByCateName(String name);
 }

@@ -102,7 +102,7 @@ public class PackageTem {
         result = 31 * result + price;
         return result;
     }
-
+/*
     @OneToMany(mappedBy = "packageTemByPackageTemId")
     public Collection<Package> getPackagesByPackageTemId() {
         return packagesByPackageTemId;
@@ -111,4 +111,5 @@ public class PackageTem {
     public void setPackagesByPackageTemId(Collection<Package> packagesByPackageTemId) {
         this.packagesByPackageTemId = packagesByPackageTemId;
     }
+    */
 }

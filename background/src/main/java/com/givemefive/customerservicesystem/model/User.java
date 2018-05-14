@@ -130,6 +130,7 @@ public class User {
         result = 31 * result + (userRemarks != null ? userRemarks.hashCode() : 0);
         return result;
     }
+/*
 
     @OneToMany(mappedBy = "userByCsEvaluationUserId")
     public Collection<CsEvaluation> getCsEvaluationsByUserId() {
@@ -148,4 +149,7 @@ public class User {
     public void setRecordsByUserId(Collection<Record> recordsByUserId) {
         this.recordsByUserId = recordsByUserId;
     }
+*/
+
 }
+

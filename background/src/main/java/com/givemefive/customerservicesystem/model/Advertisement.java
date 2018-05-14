@@ -62,6 +62,7 @@ public class Advertisement {
         result = 31 * result + (companyId != null ? companyId.hashCode() : 0);
         return result;
     }
+/*
 
     @ManyToOne
     @JoinColumn(name = "company_id", referencedColumnName = "company_id")
@@ -72,4 +73,6 @@ public class Advertisement {
     public void setCompanyByCompanyId(Company companyByCompanyId) {
         this.companyByCompanyId = companyByCompanyId;
     }
+*/
+
 }

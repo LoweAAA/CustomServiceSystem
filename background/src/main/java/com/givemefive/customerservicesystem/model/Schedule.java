@@ -22,6 +22,7 @@ public class Schedule {
     private Integer schedule68;
     private CustomerService customerServiceByScheduleCsId;
 
+    @Basic
     @Id
     @Column(name = "schedule")
     public String getSchedule() {
@@ -227,7 +228,7 @@ public class Schedule {
         result = 31 * result + (schedule68 != null ? schedule68.hashCode() : 0);
         return result;
     }
-
+/*
     @ManyToOne
     @JoinColumn(name = "schedule_cs_id", referencedColumnName = "cs_id", nullable = false)
     public CustomerService getCustomerServiceByScheduleCsId() {
@@ -237,4 +238,6 @@ public class Schedule {
     public void setCustomerServiceByScheduleCsId(CustomerService customerServiceByScheduleCsId) {
         this.customerServiceByScheduleCsId = customerServiceByScheduleCsId;
     }
+    */
+
 }

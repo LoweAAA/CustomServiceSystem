@@ -28,7 +28,7 @@ public class ProductDaoImpl implements ProductDao {
     }
 
     public void delete(String id) {
-        hql = "DELETE FROM Product l WHERE l.id = ?";
+        hql = "DELETE FROM Product l WHERE l.productId = ?";
         session().createQuery(hql).setParameter(0, id).executeUpdate();
     }
 
@@ -41,15 +41,15 @@ public class ProductDaoImpl implements ProductDao {
         return session().createQuery(hql).list();
     }
 
-    /*
-    public String namequeryBycompanyname(String name){
-        hql = "SELECT p.name FROM Product p ,Category c WHERE (p.category_id = c.category_id AND c.company_id = ?)";
-        return (String) session().createQuery(hql).setParameter(0, name).uniqueResult();
-    }
-*/
 
-    public Product queryByID(String id) {
-        hql = "FROM CustomerService l WHERE l.id = ?";
-        return (Product) session().createQuery(hql).setParameter(0, id).uniqueResult();
+    public List<Product> queryByComName(String name) {
+        hql = "FROM Product l WHERE l.companyName = ?";
+        return session().createQuery(hql).setParameter(0, name).list();
+    }
+
+
+    public List<Product> queryByCateName(String name) {
+        hql = "FROM Product l WHERE l.categoryName = ?";
+        return session().createQuery(hql).setParameter(0, name).list();
     }
 }

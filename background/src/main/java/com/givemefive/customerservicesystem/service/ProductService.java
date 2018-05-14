@@ -2,12 +2,18 @@ package com.givemefive.customerservicesystem.service;
 
 import com.givemefive.customerservicesystem.model.Product;
 
+import java.util.List;
+
 public interface ProductService {
 
-    public void addProduct(Product product);
+    void addProduct(Product product);
 
-    public void delete(String id);
+    void delete(String id);
 
-    public void update(Product product);
+    void update(Product product);
+
+    List<Product> queryByCateName(String name);
+
+    List<Product> queryByComName(String name);
 
 }
