@@ -40,7 +40,6 @@ public class CustomerserviceDaoImpl implements CustomerserviceDao{
     }
 
     public CustomerService queryByID(String id) {
-        hql = "FROM CustomerService l WHERE l.csId = :sid";
         System.out.println(id + " " + hql);
         return (CustomerService) session().createQuery(hql).setParameter("sid", id).uniqueResult();
     }

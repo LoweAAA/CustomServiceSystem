@@ -9,6 +9,7 @@ import com.givemefive.customerservicesystem.repostory.CustomerserviceDao;
 import com.givemefive.customerservicesystem.repostory.ProductDao;
 import com.givemefive.customerservicesystem.repostory.RecordDao;
 import com.givemefive.customerservicesystem.repostory.TestDao;
+import com.givemefive.customerservicesystem.service.CSservice;
 import com.givemefive.customerservicesystem.service.ProductService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -26,15 +27,13 @@ public class CSDaoTest {
     private CustomerserviceDao customerserviceDao;
 
     @Autowired
+    private CSservice cSservice;
+
+    @Autowired
     private ProductService productService;
     @Autowired
     private ProductDao productDao;
 
-    @Test
-    public void querybyid(){
-        CustomerService CustomerService= customerserviceDao.queryByID("123");
-        System.out.println(CustomerService.getCsPassword());
-    }
 
     @Test
     public void querybycomname(){
@@ -45,6 +44,8 @@ public class CSDaoTest {
             System.out.println(a.getProductName());
         }
     }
+
+
 
 
 }

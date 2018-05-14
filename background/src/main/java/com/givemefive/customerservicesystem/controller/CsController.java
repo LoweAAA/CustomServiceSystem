@@ -23,9 +23,9 @@ public class CsController {
     @Autowired
     private CustomerserviceDao customerserviceDao;
 
-    @RequestMapping("loginconfirm")
+    @RequestMapping("csloginconfirm.do")
     @ResponseBody
-    public Map loginConfirm(@RequestParam("id") String id, @RequestParam("password") String password){
+    public Map loginConfirm(@RequestParam("cs_id") String id, @RequestParam("cs_password") String password){
         Map map=new HashMap();
         CustomerService customerService=loginService.loginConfirm(id,password);
         map.put("data",customerService);
@@ -49,6 +49,28 @@ public class CsController {
         else map.put("status","查找成功！");
         return map;
     }
+
+
+
+    @RequestMapping("CSsignin")
+    @ResponseBody
+    public Map register(@RequestParam("name") String name,@RequestParam("companyname") String companyname,@RequestParam("contractinfo") String contractinfo,
+                        @RequestParam("account") String account,@RequestParam("id") String id,@RequestParam("password1") String password){
+        Map map = new HashMap();
+        CustomerService customerService = new CustomerService(name,companyname,contractinfo,account,id,password);
+        System.out.println(customerService);
+        if(customerService==null){
+            map.put("status","添加失败！");
+        }else {
+            loginService.addAccount(customerService);
+            map.put("status","添加成功！");
+        }
+        return map;
+    }
+
+
+
+
 /*
     @RequestMapping("login")
     public String login(){

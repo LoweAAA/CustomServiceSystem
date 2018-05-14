@@ -107,6 +107,16 @@ public class CustomerService {
         this.csCompanyName = csCompanyName;
     }
 
+    public CustomerService(String name,String csCompanyName, String csContactInformation, String csAccount,String csId,String csPassword){
+        this.csName = name;
+        this.csCompanyName = csCompanyName;
+        this.csContactInformation = csContactInformation;
+        this.csAccount = csAccount;
+        this.csId = csId;
+        this.csPassword = csPassword;
+    }
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
