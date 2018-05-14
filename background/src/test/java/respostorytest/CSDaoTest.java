@@ -34,11 +34,6 @@ public class CSDaoTest {
     @Autowired
     private ProductDao productDao;
 
-    @Test
-    public void querybyid(){
-        CustomerService CustomerService= customerserviceDao.queryByID("123");
-        System.out.println(CustomerService.getCsPassword());
-    }
 
     @Test
     public void querybycomname(){
@@ -51,14 +46,6 @@ public class CSDaoTest {
     }
 
 
-    @Test
-    public void add(){
-        CustomerService customerService = new CustomerService("Chen","ASUS","15512345678","asus@163.com",
-                "2","123");
-        cSservice.addAccount(customerService);
-
-            System.out.println(cSservice.getAll());
-    }
 
 
 }

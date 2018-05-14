@@ -6,10 +6,7 @@ import com.givemefive.customerservicesystem.repostory.CompanyDao;
 import com.givemefive.customerservicesystem.service.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.HashMap;
@@ -21,27 +18,8 @@ public class CompanyController {
     @Autowired
     private CompanyService companyService;
 
-/*
 
-
-    @RequestMapping("ComLoginconfirm")
-    @ResponseBody
-    public Map loginconfirm(@RequestParam("com_mail") String mail, @RequestParam("com_password") String password){
-        Map map = new HashMap();
-        Company company = companyService.loginconfirm(mail,password);
-        map.put("date",company);
-        if(company == null){
-            map.put("status","账号密码错误");    //将key-value存入map中
-        }
-        else map.put("status","账号密码正确");
-        return map;
-    }
-*/
-
-
-
-    //TEST
-    @RequestMapping("ComLoginconfirm")
+    @RequestMapping(value = "ComLoginconfirm")
     @ResponseBody
     public Map test(@RequestParam("com_mail") String mail, @RequestParam("com_password") String password){
         Map map = new HashMap();

@@ -268,9 +268,11 @@
           $(document).ready(function() {
               $("#com_submit").click(function(){
                   $.ajax({
-                      type: "POST",
+                      type: "GET",
                       data: {"com_mail": $("#commail").val(), "com_password": $("#compassword").val()},
-                      url: "../../../ComLoginconfirm",
+                      // url:"http://118.25.100.232:8080/CustomServiceSystem/ComLoginconfirm",
+                       url:"http://localhost:8080/ComLoginconfirm",
+                      //url: "../../../ComLoginconfirm",
                       //contentType: "application/json; charset=utf-8",
                       dataType: "json",
                       success: function (data) {
