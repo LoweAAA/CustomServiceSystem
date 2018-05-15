@@ -85,7 +85,7 @@
                   alert(id);
                   $.ajax({
                       type: "POST",
-                      url: "../../../getinfo",
+                      url: "http://118.25.100.232:8080/CustomServiceSystem/getinfo",
                       data: {"com_id": JSON.parse(id)},
                       //async: true,//同步
                       //contentType: "application/json; charset=utf-8",
