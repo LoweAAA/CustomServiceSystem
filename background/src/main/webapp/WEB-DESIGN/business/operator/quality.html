@@ -11,8 +11,8 @@
 
     <!-- Bootstrap core CSS -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="../lib/css/bootstrap.min.css" rel="stylesheet">
-
+    <link href="../lib/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../lib/css/bootstrap-datetimepicker.css">
     <!-- Custom styles for this template -->
     <link href="../secondpage/second.css" rel="stylesheet">
 </head>
@@ -23,13 +23,11 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">Project name</a>
+          <a class="navbar-brand" href="#">乐聊客服</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Settings</a></li>
             <li><a href="#">personal</a></li>
-            <li><a href="#">Help</a></li>
           </ul>
         </div>
       </div>
@@ -55,7 +53,6 @@
       				<li>
       					<div class="link"><i class="fa fa-code"></i>知识库<i class="fa fa-chevron-down"></i></div>
       					<ul class="submenu">
-      						<li><a href="../knowledge/information.html">信息统计</a></li>
                   <li><a href="../knowledge/questions.html">问题管理</a></li>
                   <li><a href="../knowledge/similar.html">相似词汇</a></li>
       					</ul>
@@ -72,11 +69,116 @@
         ==============================-->
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">质量检测</h1>
-          
+          <!--时间选择器-->
+          <div class="row">  
+            <div class='col-sm-6'>  
+                <div class="form-group">  
+                    <label>选择开始时间：</label>  
+                    <!--指定 date标记-->  
+                    <div class='input-group date' id='datetimepicker1'>  
+                        <input type='text' class="form-control" />  
+                        <span class="input-group-addon">  
+                            <span class="glyphicon glyphicon-calendar"></span>  
+                        </span>  
+                    </div>  
+                </div>  
+            </div>  
+            <div class='col-sm-6'>  
+                <div class="form-group">  
+                    <label>选择结束时间：</label>  
+                    <!--指定 date标记-->  
+                    <div class='input-group date' id='datetimepicker2'>  
+                        <input type='text' class="form-control" />  
+                        <span class="input-group-addon">  
+                            <span class="glyphicon glyphicon-calendar"></span>  
+                        </span>  
+                    </div>  
+                </div>  
+            </div>  
+          </div>  
+          <form class="form-inline">
+            <div class="form-group">
+              <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+              <div class="input-group">
+                <div class="input-group-addon">查询</div>
+                <input type="text" class="form-control" id="exampleInputAmount" placeholder="工号/姓名">
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">开始查询</button>
+          </form>
+          <div class="table-responsive page-heart">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>姓名</th>
+                  <th>工号</th>
+                  <th>在线时长/月</th>
+                  <th>回答问题个数</th>
+                  <th>客服满意度</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>张三</td>
+                  <td>0001</td>
+                  <td>50</td>
+                  <td>500</td>
+                  <td>4.8</td>
+                </tr>
+                <tr>
+                  <td>赵柳</td>
+                  <td>0002</td>
+                  <td>45</td>
+                  <td>30</td>
+                  <td>3.7</td>
+                </tr>
+                <tr>
+                  <td>钱多</td>
+                  <td>0003</td>
+                  <td>57</td>
+                  <td>520</td>
+                  <td>4.9</td>
+                </tr>
+                <tr>
+                  <td>张三</td>
+                  <td>0004</td>
+                  <td>50</td>
+                  <td>500</td>
+                  <td>4.8</td>
+                </tr>
+                <tr>
+                  <td>孙达</td>
+                  <td>0005</td>
+                  <td>56</td>
+                  <td>320</td>
+                  <td>4.0</td>
+                </tr>
+                <tr>
+                  <td>立卡</td>
+                  <td>0006</td>
+                  <td>44</td>
+                  <td>240</td>
+                  <td>4.9</td>
+                </tr>
+                <tr>
+                  <td>周助</td>
+                  <td>0007</td>
+                  <td>50</td>
+                  <td>500</td>
+                  <td>4.8</td>
+                </tr>
+                <tr>
+                  <td>吴涵</td>
+                  <td>0008</td>
+                  <td>50</td>
+                  <td>500</td>
+                  <td>4.8</td>
+                </tr>
+              </tbody>
+            </table>
         </div>
       </div>
     </div>
-    
 
 
     <!-- Bootstrap core JavaScript
@@ -86,6 +188,8 @@
     <script>window.jQuery || document.write('<script src="../lib/js/jquery-3.2.1.js"><\/script>')</script>
     <script type="text/javascript" src="../lib/js/echarts.min.js"></script>
     <script src="../lib/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../lib/js/moment-with-locales.js"></script>
+    <script type="text/javascript" src="../lib/js/bootstrap-datetimepicker.min.js"></script>
     <script type="text/javascript" src="../lib/js/second.js"></script>
 </body>
 

@@ -170,7 +170,7 @@
 
       <!-- /END THE FEATURETTES -->
 
-      <!--LOGIN PLACE-->
+      <!--管理员登录-->
       <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -196,59 +196,59 @@
           </div>
         </div>
 
-        <!--LOGIN PLACE-->
+        <!--企业登录-->
       <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">登录</h4>
+                <h4 class="modal-title" id="exampleModalLabel">企业登录</h4>
               </div>
               <div class="modal-body">
                 <form class="form-signin">
                   <label for="inputEmail" class="sr-only">Email address</label>
-                  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                  <input type="email" id="commail" class="form-control" placeholder="Email address" required autofocus>
                   <label for="inputPassword" class="sr-only">Password</label>
-                  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                  <input type="password" id="compassword" name="com_password" class="form-control" placeholder="Password" required>
                   <div class="checkbox">
                     <label>
                       <input type="checkbox" value="remember-me"> Remember me
                     </label>
                   </div>
-                  <a class="btn btn-lg btn-primary btn-block" type="submit" href="../secondpage/second.html">Sign in</a>
+                  <input class="btn btn-lg btn-primary btn-block" type="button" value="提交" id="com_submit">
                 </form>
               </div>
             </div>
           </div>
         </div>
 
-        <!--LOGIN PLACE-->
+        <!--客服登录-->
       <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">登录</h4>
+                <h4 class="modal-title" id="exampleModalLabel">客服登录</h4>
               </div>
               <div class="modal-body">
-                <form class="form-signin">
-                  <label for="inputEmail" class="sr-only">Email address</label>
-                  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                <form class="form-signin" action="../../../csloginconfirm.do" method="post">
+                  <label for="inputEmail" class="sr-only">Input ID</label>
+                  <input type="text" name="cs_id" class="form-control" placeholder="Input ID" required autofocus>
                   <label for="inputPassword" class="sr-only">Password</label>
-                  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                  <input type="password" name="cs_password" class="form-control" placeholder="Password" >
                   <div class="checkbox">
                     <label>
                       <input type="checkbox" value="remember-me"> Remember me
                     </label>
                   </div>
-                  <a class="btn btn-lg btn-primary btn-block" type="submit" href="../mytest/myfirst/first.html">Sign in</a>
+                  <input class="btn btn-lg btn-primary btn-block" type="submit" value="sign in" >
                 </form>
               </div>
             </div>
           </div>
         </div>
 
-        <!--register-->
+        <!--企业注册-->
         <div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -260,6 +260,8 @@
                 <form class="form-signin">
                   <label for="message-text" class="control-label">公司名称</label>
                   <input type="email" id="message-text" class="form-control" placeholder="公司名称" required autofocus>
+                  <label for="message-text" class="control-label">公司地址</label>
+                  <input type="email" id="message-text" class="form-control" placeholder="公司地址" required autofocus>
                   <label for="message-text" class="control-label">联系人</label>
                   <input type="email" id="message-text" class="form-control" placeholder="联系人" required autofocus>
                   <label for="message-text" class="control-label">联系电话</label>
@@ -295,6 +297,7 @@
 
     <script src="../lib/js/jquery-3.2.1.js"></script>
     <script src="../lib/js/bootstrap.min.js"></script>
+    <script src="../firstpage/first.js"></script>
     <script src="../lib/js/holder.min.js"></script>
   </body>
 </html>
