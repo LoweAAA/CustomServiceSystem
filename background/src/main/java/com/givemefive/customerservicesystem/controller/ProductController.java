@@ -53,4 +53,21 @@ public class ProductController {
         return map;
     }
 
+
+    @RequestMapping("productgetall")
+    @ResponseBody
+    public Map getAll(){
+        Map map = new HashMap();
+        List<Product> productList = productService.getAll();
+        map.put("data",productList);
+        if(productList==null){
+            map.put("status","没有产品");    //将key-value存入map中
+        }
+        else map.put("status","返回所有产品");
+        return map;
+    }
+
+
+
+
 }

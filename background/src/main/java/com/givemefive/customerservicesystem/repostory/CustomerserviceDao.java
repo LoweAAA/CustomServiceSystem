@@ -1,7 +1,6 @@
 package com.givemefive.customerservicesystem.repostory;
 
 import com.givemefive.customerservicesystem.model.CustomerService;
-import com.givemefive.customerservicesystem.model.User;
 
 import java.util.List;
 

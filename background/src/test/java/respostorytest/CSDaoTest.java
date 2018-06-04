@@ -4,11 +4,8 @@ package respostorytest;
 import com.givemefive.customerservicesystem.config.RootConfig;
 import com.givemefive.customerservicesystem.model.CustomerService;
 import com.givemefive.customerservicesystem.model.Product;
-import com.givemefive.customerservicesystem.model.Record;
 import com.givemefive.customerservicesystem.repostory.CustomerserviceDao;
 import com.givemefive.customerservicesystem.repostory.ProductDao;
-import com.givemefive.customerservicesystem.repostory.RecordDao;
-import com.givemefive.customerservicesystem.repostory.TestDao;
 import com.givemefive.customerservicesystem.service.CSservice;
 import com.givemefive.customerservicesystem.service.ProductService;
 import org.junit.Test;
@@ -45,7 +42,20 @@ public class CSDaoTest {
         }
     }
 
+@Test
+    public void CsTest(){
+    System.out.println("111");
+        CustomerService customerService = customerserviceDao.queryByID("1");
+        System.out.println(customerService.getCsName());
+}
 
+@Test
+    public void ByName(){
+    List<CustomerService> list = customerserviceDao.queryByComName("Apple");
+    for(CustomerService a : list) {
+        System.out.println(a.getCsName());
+    }
 
+}
 
 }

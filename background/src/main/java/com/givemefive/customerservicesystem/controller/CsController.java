@@ -19,15 +19,15 @@ import java.util.HashMap;
 @CrossOrigin(origins = "*", maxAge = 3600)
 public class CsController {
     @Autowired
-    private CSservice loginService;
+    private CSservice csService;
     @Autowired
     private CustomerserviceDao customerserviceDao;
 
-    @RequestMapping("csloginconfirm.do")
+    @RequestMapping("cslogin")
     @ResponseBody
     public Map loginConfirm(@RequestParam("cs_id") String id, @RequestParam("cs_password") String password){
         Map map=new HashMap();
-        CustomerService customerService=loginService.loginConfirm(id,password);
+        CustomerService customerService=csService.loginConfirm(id,password);
         map.put("data",customerService);
         if(customerService==null){
             map.put("status","账号密码错误");    //将key-value存入map中
@@ -52,22 +52,58 @@ public class CsController {
 
 
 
+
+    @RequestMapping("CSgetinfo")
+    @ResponseBody
+    public  Map getinfo(@RequestParam("CSid") String id){
+        Map map = new HashMap();
+        CustomerService customerService = csService.queryById(id);
+        map.put("data",customerService);
+        if(customerService == null){
+            map.put("status","客服信息为空");
+        }else {
+            map.put("status","客服信息查找成功");
+        }
+        return map;
+    }
+
+
+
+
+
     @RequestMapping("CSsignin")
     @ResponseBody
     public Map register(@RequestParam("name") String name,@RequestParam("companyname") String companyname,@RequestParam("contractinfo") String contractinfo,
-                        @RequestParam("account") String account,@RequestParam("id") String id,@RequestParam("password1") String password){
+                        @RequestParam("account") String account,@RequestParam("id") String id,@RequestParam("password") String password){
         Map map = new HashMap();
         CustomerService customerService = new CustomerService(name,companyname,contractinfo,account,id,password);
         System.out.println(customerService);
         if(customerService==null){
             map.put("status","添加失败！");
         }else {
-            loginService.addAccount(customerService);
+            csService.addAccount(customerService);
             map.put("status","添加成功！");
         }
         return map;
     }
 
+
+
+    @RequestMapping("updateCS")
+    @ResponseBody
+    public Map updateCS(@RequestParam("csId") String csId, @RequestParam("csName") String csName,
+                                @RequestParam("csAccount") String csAccount, @RequestParam("csPassword") String csPassword,
+                                @RequestParam("csContract") String csContract, @RequestParam("csComName") String csComName){
+        Map map = new HashMap();
+        CustomerService customerService = new CustomerService(csName,csComName,csContract,csAccount,csId,csPassword);
+
+        if(csService.update(customerService) == null){
+            map.put("status","更新失败");
+        }else {
+            map.put("status","更新成功");
+        }
+        return map;
+    }
 
 
 

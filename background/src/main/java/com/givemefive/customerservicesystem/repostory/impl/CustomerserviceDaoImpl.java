@@ -40,12 +40,12 @@ public class CustomerserviceDaoImpl implements CustomerserviceDao{
     }
 
     public CustomerService queryByID(String id) {
-        System.out.println(id + " " + hql);
-        return (CustomerService) session().createQuery(hql).setParameter("sid", id).uniqueResult();
+        hql = "FROM CustomerService a WHERE a.csId = ?";
+        return (CustomerService) session().createQuery(hql).setParameter(0, id).uniqueResult();
     }
 
     public List<CustomerService> queryByComName(String name){
-        hql = "FROM CustomerService a WHERE a.csCompanyName = ?";
+        hql = "SELECT a FROM CustomerService a,Company b WHERE a.csCompanyId = b.companyId and b.companyName=?";
         return session().createQuery(hql).setParameter(0, name).list();
     }
 

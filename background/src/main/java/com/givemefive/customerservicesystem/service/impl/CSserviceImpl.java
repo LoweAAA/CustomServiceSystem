@@ -43,8 +43,15 @@ public class CSserviceImpl implements CSservice {
     }
 
 @Override
-    public void update(CustomerService customerService) {
-        customerserviceDao.update(customerService);
+    public String update(CustomerService customerService) {
+        CustomerService customerService1 = customerserviceDao.queryByID(customerService.getCsId());
+        if(customerService1 == null){
+            return null;
+        }else{
+            customerserviceDao.update(customerService);
+            return "ok";
+        }
+
     }
 
     @Override
@@ -57,4 +64,18 @@ public class CSserviceImpl implements CSservice {
             return cslist;
         }
     }
+
+
+    @Override
+    public CustomerService queryById(String id){
+        CustomerService customerService = customerserviceDao.queryByID(id);
+        if(customerService == null){
+            return null;
+        }else {
+            return customerService;
+        }
+    }
+
+
+
 }

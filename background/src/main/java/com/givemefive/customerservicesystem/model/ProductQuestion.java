@@ -1,5 +1,6 @@
 package com.givemefive.customerservicesystem.model;
 
+
 import javax.persistence.*;
 import java.util.Collection;
 
@@ -8,7 +9,8 @@ import java.util.Collection;
 public class ProductQuestion {
     private String proQuestionId;
     private String proQuestionName;
-    private String productName;
+    private String productId;
+    private String questionClass;
     private Product productByProductName;
     private Collection<Repository> repositoriesByProQuestionId;
 
@@ -34,13 +36,23 @@ public class ProductQuestion {
     }
 
     @Basic
-    @Column(name = "product_name")
-    public String getProductName() {
-        return productName;
+    @Column(name = "product_id")
+    public String getProductId() {
+        return productId;
     }
 
-    public void setProductName(String productName) {
-        this.productName = productName;
+    public void setProductId(String productId) {
+        this.productId = productId;
+    }
+
+    @Basic
+    @Column(name = "question_class")
+    public String getQuestionClass(){
+        return questionClass;
+    }
+
+    public void setQuestionClass(String questionClass){
+        this.questionClass = questionClass;
     }
 
     @Override
@@ -54,7 +66,8 @@ public class ProductQuestion {
             return false;
         if (proQuestionName != null ? !proQuestionName.equals(that.proQuestionName) : that.proQuestionName != null)
             return false;
-        if (productName != null ? !productName.equals(that.productName) : that.productName != null) return false;
+        if (productId != null ? !productId.equals(that.productId) : that.productId != null) return false;
+        if (questionClass != null ? !questionClass.equals(that.questionClass) : that.questionClass != null) return false;
 
         return true;
     }
@@ -63,7 +76,8 @@ public class ProductQuestion {
     public int hashCode() {
         int result = proQuestionId != null ? proQuestionId.hashCode() : 0;
         result = 31 * result + (proQuestionName != null ? proQuestionName.hashCode() : 0);
-        result = 31 * result + (productName != null ? productName.hashCode() : 0);
+        result = 31 * result + (productId != null ? productId.hashCode() : 0);
+        result = 31 * result + (questionClass != null ? questionClass.hashCode() : 0);
         return result;
     }
 

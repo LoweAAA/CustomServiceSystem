@@ -1,18 +1,14 @@
 package com.givemefive.customerservicesystem.model;
 
 import javax.persistence.*;
-import java.util.Collection;
 
 @Entity
+@Table(name = "category", schema = "CustomerSurvice", catalog = "")
 public class Category {
     private String categoryId;
     private String categoryName;
-    private String companyId;
-    private Company companyByCompanyId;
-    private Collection<Product> productsByCategoryId;
     private String companyName;
 
-    @Basic
     @Id
     @Column(name = "category_id")
     public String getCategoryId() {
@@ -34,13 +30,13 @@ public class Category {
     }
 
     @Basic
-    @Column(name = "company_id",insertable = false,updatable = false)
-    public String getCompanyId() {
-        return companyId;
+    @Column(name = "company_name")
+    public String getCompanyName() {
+        return companyName;
     }
 
-    public void setCompanyId(String companyId) {
-        this.companyId = companyId;
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
     }
 
     @Override
@@ -53,7 +49,8 @@ public class Category {
         if (categoryId != null ? !categoryId.equals(category.categoryId) : category.categoryId != null) return false;
         if (categoryName != null ? !categoryName.equals(category.categoryName) : category.categoryName != null)
             return false;
-        if (companyId != null ? !companyId.equals(category.companyId) : category.companyId != null) return false;
+        if (companyName != null ? !companyName.equals(category.companyName) : category.companyName != null)
+            return false;
 
         return true;
     }
@@ -62,38 +59,9 @@ public class Category {
     public int hashCode() {
         int result = categoryId != null ? categoryId.hashCode() : 0;
         result = 31 * result + (categoryName != null ? categoryName.hashCode() : 0);
-        result = 31 * result + (companyId != null ? companyId.hashCode() : 0);
+        result = 31 * result + (companyName != null ? companyName.hashCode() : 0);
         return result;
     }
-/*
 
-    @ManyToOne
-    @JoinColumn(name = "company_id", referencedColumnName = "company_id", nullable = false)
-    public Company getCompanyByCompanyId() {
-        return companyByCompanyId;
-    }
 
-    public void setCompanyByCompanyId(Company companyByCompanyId) {
-        this.companyByCompanyId = companyByCompanyId;
-    }
-
-    @OneToMany(mappedBy = "categoryByCategoryId")
-    public Collection<Product> getProductsByCategoryId() {
-        return productsByCategoryId;
-    }
-
-    public void setProductsByCategoryId(Collection<Product> productsByCategoryId) {
-        this.productsByCategoryId = productsByCategoryId;
-    }
-*/
-
-    @Basic
-    @Column(name = "company_name")
-    public String getCompanyName() {
-        return companyName;
-    }
-
-    public void setCompanyName(String companyName) {
-        this.companyName = companyName;
-    }
 }

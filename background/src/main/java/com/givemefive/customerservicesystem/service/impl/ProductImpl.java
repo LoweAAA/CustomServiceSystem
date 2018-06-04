@@ -49,4 +49,11 @@ public class ProductImpl implements ProductService {
             return productslist;
         }
     }
+
+
+    public List<Product> getAll(){
+        List<Product> productList = productDao.getAll();
+        return productList;
+    }
+
 }

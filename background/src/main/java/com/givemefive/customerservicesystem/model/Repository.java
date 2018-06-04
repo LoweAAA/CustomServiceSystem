@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
+@Table(name = "repository", schema = "CustomerSurvice", catalog = "")
 public class Repository {
     private String repositoryId;
     private String proQuestionId;
@@ -14,7 +15,10 @@ public class Repository {
     private Date repositoryCreationTime;
     private int repositoryConsultationTimes;
     private String repositoryEditor;
-    private ProductQuestion productQuestionByProQuestionId;
+
+    public Repository() {
+    }
+    //private ProductQuestion productQuestionByProQuestionId;
 
     @Id
     @Column(name = "repository_id")
@@ -105,6 +109,20 @@ public class Repository {
     public void setRepositoryEditor(String repositoryEditor) {
         this.repositoryEditor = repositoryEditor;
     }
+
+
+
+
+
+
+    public Repository(String repositoryId,String repositoryQuestion,String repositoryResponse,String repositoryKeyWords){
+        this.repositoryId = repositoryId;
+        this.repositoryQuestion = repositoryQuestion;
+        this.repositoryResponse = repositoryResponse;
+        this.repositoryKeyWords = repositoryKeyWords;
+    }
+
+
 
     @Override
     public boolean equals(Object o) {

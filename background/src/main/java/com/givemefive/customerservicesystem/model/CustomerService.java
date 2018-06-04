@@ -1,7 +1,6 @@
 package com.givemefive.customerservicesystem.model;
 
 import javax.persistence.*;
-import java.util.Collection;
 
 @Entity
 @Table(name = "customer_service", schema = "CustomerSurvice", catalog = "")
@@ -12,38 +11,9 @@ public class CustomerService {
     private String csPassword;
     private String csContactInformation;
     private String csCompanyId;
-    private Collection<CsEvaluation> csEvaluationsByCsId;
-    private Company companyByCsCompanyId;
-    private Collection<Record> recordsByCsId;
-    private Collection<Schedule> schedulesByCsId;
-   /* @OneToMany(mappedBy = "customerServiceByCsEvaluationCsId")
-    public Collection<CsEvaluation> getCsEvaluationsByCsId() {
-        return csEvaluationsByCsId;
+
+    public CustomerService() {
     }
-
-    public void setCsEvaluationsByCsId(Collection<CsEvaluation> csEvaluationsByCsId) {
-        this.csEvaluationsByCsId = csEvaluationsByCsId;
-    }
-
-
-    @OneToMany(mappedBy = "customerServiceByRecordCsId")
-    public Collection<Record> getRecordsByCsId() {
-        return recordsByCsId;
-    }
-
-    public void setRecordsByCsId(Collection<Record> recordsByCsId) {
-        this.recordsByCsId = recordsByCsId;
-    }
-
-    @OneToMany(mappedBy = "customerServiceByScheduleCsId")
-    public Collection<Schedule> getSchedulesByCsId() {
-        return schedulesByCsId;
-    }
-
-    public void setSchedulesByCsId(Collection<Schedule> schedulesByCsId) {
-        this.schedulesByCsId = schedulesByCsId;
-    }*/
-    private String csCompanyName;
 
     @Basic
     @Id
@@ -96,26 +66,25 @@ public class CustomerService {
         this.csContactInformation = csContactInformation;
     }
 
-
     @Basic
-    @Column(name = "cs_company_Name")
-    public String getCsCompanyName() {
-        return csCompanyName;
+    @Column(name = "cs_company_ID", nullable = false, length = 20)
+    public String getCsCompanyId() {
+        return csCompanyId;
     }
 
-    public void setCsCompanyName(String csCompanyName) {
-        this.csCompanyName = csCompanyName;
+    public void setCsCompanyId(String csCompanyId) {
+        this.csCompanyId = csCompanyId;
     }
 
-    public CustomerService(String name,String csCompanyName, String csContactInformation, String csAccount,String csId,String csPassword){
+
+    public CustomerService(String name,String companyname,String contractinfo,String account,String id,String password){
+        this.csId = id;
         this.csName = name;
-        this.csCompanyName = csCompanyName;
-        this.csContactInformation = csContactInformation;
-        this.csAccount = csAccount;
-        this.csId = csId;
-        this.csPassword = csPassword;
+        this.csPassword = password;
+        this.csAccount = account;
+        this.csContactInformation = contractinfo;
+        this.csCompanyId = companyname;
     }
-
 
     @Override
     public boolean equals(Object o) {
@@ -145,5 +114,4 @@ public class CustomerService {
         result = 31 * result + (csCompanyId != null ? csCompanyId.hashCode() : 0);
         return result;
     }
-
 }

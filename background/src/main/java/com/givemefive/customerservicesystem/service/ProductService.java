@@ -16,4 +16,6 @@ public interface ProductService {
 
     List<Product> queryByComName(String name);
 
+    List<Product> getAll();
+
 }

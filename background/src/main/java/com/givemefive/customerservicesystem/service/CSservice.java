@@ -14,8 +14,10 @@ public interface CSservice {
 
     void delete(String id);
 
-    void update(CustomerService customerServiceervice);
+    String update(CustomerService customerServiceervice);
 
     List<CustomerService> byCompanyName(String name);
+
+    CustomerService queryById(String id);
 
 }
