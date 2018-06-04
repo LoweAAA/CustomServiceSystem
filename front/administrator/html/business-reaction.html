@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- CSS App -->
+    <link rel="stylesheet" type="text/css" href="../html/css/style.css">
+
+    <title>管理员界面</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../lib/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="administrator.css" rel="stylesheet">
+</head>
+
+<body>
+    <div style="text-align:center;clear:both"></div>
+    <!--顶栏-->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">乐聊客服</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">personal</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!--*侧边栏-->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul id="accordion" class="accordion">
+              <li>
+                <div class="link"><i class="fa fa-globe"></i>  企业相关管理<i class="fa fa-chevron-down"></i></div>
+                <ul class="submenu">
+                  <li><a href="../html/business-reaction.html">企业反馈</a></li>
+                  <li><a href="../html/business-account.html">企业账户管理</a></li>
+                </ul>
+              </li>
+              <li>
+                <div class="link"><i class="fa fa-mobile"></i>  平台相关管理<i class="fa fa-chevron-down"></i></div>
+                <ul class="submenu">
+                  <li><a href="../html/platform-data.html">平台使用数据统计</a></li>
+                  <li><a href="../html/platform-question.html">平台使用问题编辑</a></li>
+                  <li><a href="../html/platform-ad.html">广告推送</a></li>
+                </ul>
+              </li>
+              <li>
+                <div class="link"><i class="fa fa-code"><a href="../html/private.html"></i>隐私条款</a></div>
+              </li>
+            </ul>
+        </div>
+
+        <!--企业反馈统计页面
+        ==============================-->
+       
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">企业反馈</h1>
+          
+          <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <div class="thumbnail no-margin-bottom">
+                           <img src="../img/thumbnails/picjumbo.com_IMG_4566.jpg" class="img-responsive">
+                                <div class="caption">
+                                    <h3 id="thumbnail-label">A企业<a class="anchorjs-link" href="#thumbnail-label"><span class="anchorjs-icon"></span></a></h3>
+                                        <p>广告内容及链接</p>
+                                        <p>
+                                            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#permit">通过
+                                            </button> 
+                                            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#refuse">拒绝
+                                            </button>
+                                       </p>
+                                    </div>
+                                </div>
+                            </div>
+                                        
+                                   
+                <div class="col-md-6 col-sm-12">
+                    <div class="thumbnail no-margin-bottom">
+                            <img src="../img/thumbnails/picjumbo.com_IMG_3241.jpg" class="img-responsive">
+                                <div class="caption">
+                                    <h3 id="thumbnail-label">B企业<a class="anchorjs-link" href="#thumbnail-label"><span class="anchorjs-icon"></span></a></h3>
+                                        <p>广告内容及链接</p>
+                                        <p>
+                                            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#permit">通过
+                                            </button> 
+                                            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#refuse">拒绝
+                                            </button>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    <!--批准alert-->
+    <div id="permit" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="gridSystemModalLabel">广告申请</h4>
+          </div>
+          <div class="modal-body">
+            <h5>您已通过该条广告申请</h5>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">确定</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!--驳回alert-->
+    <div id="refuse" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="gridSystemModalLabel">广告申请</h4>
+          </div>
+          <div class="modal-body">
+            <h5>您已驳回该条广告申请，请简述理由</h5>
+                     <div class="input-group">
+                <input type="text" class="form-control" id="exampleInputAmount">
+              </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">确定</button>
+          </div>
+        </div>
+      </div>
+    </div>
+             
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../lib/js/jquery-3.2.1.js"><\/script>')</script>
+    <script type="text/javascript" src="../lib/js/echarts.min.js"></script>
+    <script src="../lib/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../lib/js/second.js"></script>
+</body>
+
+</html>

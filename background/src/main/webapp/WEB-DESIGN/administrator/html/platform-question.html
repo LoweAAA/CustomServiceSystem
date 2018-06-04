@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- CSS App -->
+    <link rel="stylesheet" type="text/css" href="../html/css/style.css">
+
+    <title>管理员界面</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../lib/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="administrator.css" rel="stylesheet">
+</head>
+
+<body>
+    <div style="text-align:center;clear:both"></div>
+    <!--顶栏-->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">乐聊客服</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">personal</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!--*侧边栏-->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul id="accordion" class="accordion">
+              <li>
+                <div class="link"><i class="fa fa-globe"></i>  企业相关管理<i class="fa fa-chevron-down"></i></div>
+                <ul class="submenu">
+                  <li><a href="../html/business-reaction.html">企业反馈</a></li>
+                  <li><a href="../html/business-account.html">企业账户管理</a></li>
+                </ul>
+              </li>
+              <li>
+                <div class="link"><i class="fa fa-mobile"></i>  平台相关管理<i class="fa fa-chevron-down"></i></div>
+                <ul class="submenu">
+                  <li><a href="../html/platform-data.html">平台使用数据统计</a></li>
+                  <li><a href="../html/platform-question.html">平台使用问题编辑</a></li>
+                  <li><a href="../html/platform-ad.html">广告推送</a></li>
+                </ul>
+              </li>
+              <li>
+                <div class="link"><i class="fa fa-code"><a href="../html/private.html"></i>隐私条款</a></div>
+              </li>
+            </ul>
+        </div>
+
+        <!--平台使用问题编辑页面
+        ==============================-->
+       
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">平台使用问题编辑</h1>
+          <h3 class="page-heart">常见问题</h3>
+
+          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#refuse">新增</button>
+
+          <div class="table-responsive page-heart">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>问题</th>
+                  <th>答案</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>微信公众平台客服功能与多客服功能有何区别？</td>
+                  <td>新版的客服功能，在原有多客服的基础上进行了改进，为公众号运营者和客服人员提供一个网页版客服聊天工具。与旧版电脑客户端多客服相比，新版客服功能将会是网页聊天的形式，使用微信扫码登录，支持多人同时为一个公众号提供客服功能，实时回复粉丝的咨询。目前新版客服功能和旧版最大的区别是暂不支持手机端使用，并且不支持下载聊天记录，给您带来的不便请您谅解</td>
+                </tr>
+                <tr>
+                  <td>新版客服功能聊天记录保存多久？</td>
+                  <td>客服功能会在云端保存30天的聊天记录。点击某个对话，向上翻动即可看到较早之前的聊天记录。目前暂不支持下载及导出。</td>
+                </tr>
+                <tr>
+                  <td>新版多客服是否支持手机端使用</td>
+                  <td>支持，手机端可以进行扫码提问。</td>
+                </tr>
+                <tr>
+                  <td>从旧版多客服升级到新版客服功能后，还可以使用旧版电脑客户端吗？可以回退到之前版本吗？</td>
+                  <td>升级成功后，旧版客户端将失效，使用客服功能需通过客服功能页面进行登录，使用新版客服功能。升级成功后，不可回退。</td>
+                </tr>
+               
+                
+              </tbody>
+            </table>
+          </div>
+
+<!--新增alert-->
+    <div id="refuse" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="gridSystemModalLabel">问题新增</h4>
+          </div>
+          <div class="modal-body">
+            <h5>问题</h5>
+                     <div class="input-group">
+                <input type="text" class="form-control" id="exampleInputAmount">
+              </div>
+
+          </div>
+          <div class="modal-body">
+            <h5>答案</h5>
+                     <div class="input-group">
+                <input type="text" class="form-control" id="exampleInputAmount">
+              </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">确定</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+ 
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../lib/js/jquery-3.2.1.js"><\/script>')</script>
+    <script type="text/javascript" src="../lib/js/echarts.min.js"></script>
+    <script src="../lib/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../lib/js/second.js"></script>
+</body>
+
+</html>
