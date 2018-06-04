@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>请假管理</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../lib/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../secondpage/second.css" rel="stylesheet">
+</head>
+
+<body>
+    <div style="text-align:center;clear:both"></div>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../secondpage/second.html">乐聊客服</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">personal</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul id="accordion" class="accordion">
+              <li>
+                <div class="link">
+                  <a href="../secondpage/second.html"><i class="fa fa-mobile"></i>数据统计</a>
+                </div>
+              </li>
+              <li>
+                <div class="link"><i class="fa fa-paint-brush"></i>客服管理<i class="fa fa-chevron-down"></i></div>
+                <ul class="submenu">
+                  <li><a href="schedual.html">排班管理</a></li>
+                  <li><a href="#">请假管理</a></li>
+                  <li><a href="quality.html">质量监测</a></li>
+                </ul>
+              </li>
+              <li>
+                <div class="link"><i class="fa fa-code"></i>知识库<i class="fa fa-chevron-down"></i></div>
+                <ul class="submenu">
+                  <li><a href="../knowledge/questions.html">问题管理</a></li>
+                  <li><a href="../knowledge/similar.html">相似词汇</a></li>
+                </ul>
+              </li>
+              <li>
+                <div class="link">
+                  <i class="fa fa-mobile"></i>产品管理
+                </div>
+              </li>
+              <li>
+                <div class="link">
+                  <a href="../secondpage/account.html"><i class="fa fa-globe"></i>账户信息</a>
+                </div>
+              </li>
+            </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">人工客服</h1>
+          <h3 class="page-heart">请假管理</h3>
+          <form class="form-inline">
+            <div class="form-group">
+              <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+              <div class="input-group">
+                <div class="input-group-addon">查询</div>
+                <input type="text" class="form-control" id="exampleInputAmount" placeholder="申请人/请假时间">
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">开始查询</button>
+          </form>
+          <div class="table-responsive page-heart">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>申请人</th>
+                  <th>请假时间</th>
+                  <th>请假理由</th>
+                  <th>已请假次数</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>张三</td>
+                  <td>18-3-18</td>
+                  <td>事假</td>
+                  <td>1</td>
+                  <td>
+                    <div class="btn-group" role="group" aria-label="...">
+                      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#permit">批准</button>
+                      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#refuse">驳回</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>李四</td>
+                  <td>18-3-18</td>
+                  <td>病假</td>
+                  <td>2</td>
+                  <td>
+                    <div class="btn-group" role="group" aria-label="...">
+                      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#permit">批准</button>
+                      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#refuse">驳回</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>赵柳</td>
+                  <td>18-3-18</td>
+                  <td>回家</td>
+                  <td>10</td>
+                  <td>
+                    <div class="btn-group" role="group" aria-label="...">
+                      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#permit">批准</button>
+                      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#refuse">驳回</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>孙七</td>
+                  <td>18-3-18</td>
+                  <td>年假</td>
+                  <td>4</td>
+                  <td>
+                    <div class="btn-group" role="group" aria-label="...">
+                      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#permit">批准</button>
+                      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#refuse">驳回</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>刘九</td>
+                  <td>18-3-18</td>
+                  <td>不想上班</td>
+                  <td>1</td>
+                  <td>
+                    <div class="btn-group" role="group" aria-label="...">
+                      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#permit">批准</button>
+                      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#refuse">驳回</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>宋十</td>
+                  <td>18-3-18</td>
+                  <td>睡觉</td>
+                  <td>5</td>
+                  <td>
+                    <div class="btn-group" role="group" aria-label="...">
+                      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#permit">批准</button>
+                      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#refuse">驳回</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>宋十</td>
+                  <td>18-3-18</td>
+                  <td>睡觉</td>
+                  <td>5</td>
+                  <td>
+                    <div class="btn-group" role="group" aria-label="...">
+                      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#permit">批准</button>
+                      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#refuse">驳回</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>宋十</td>
+                  <td>18-3-18</td>
+                  <td>睡觉</td>
+                  <td>5</td>
+                  <td>
+                    <div class="btn-group" role="group" aria-label="...">
+                      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#permit">批准</button>
+                      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#refuse">驳回</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>宋十</td>
+                  <td>18-3-18</td>
+                  <td>睡觉</td>
+                  <td>5</td>
+                  <td>
+                    <div class="btn-group" role="group" aria-label="...">
+                      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#permit">批准</button>
+                      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#refuse">驳回</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>宋十</td>
+                  <td>18-3-18</td>
+                  <td>睡觉</td>
+                  <td>5</td>
+                  <td>
+                    <div class="btn-group" role="group" aria-label="...">
+                      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#permit">批准</button>
+                      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#refuse">驳回</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>宋十</td>
+                  <td>18-3-18</td>
+                  <td>睡觉</td>
+                  <td>5</td>
+                  <td>
+                    <div class="btn-group" role="group" aria-label="...">
+                      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#permit">批准</button>
+                      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#refuse">驳回</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>宋十</td>
+                  <td>18-3-18</td>
+                  <td>睡觉</td>
+                  <td>5</td>
+                  <td>
+                    <div class="btn-group" role="group" aria-label="...">
+                      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#permit">批准</button>
+                      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#refuse">驳回</button>
+                    </div>
+                  </td>
+                </tr>
+                
+              </tbody>
+            </table>
+        </div>
+        
+      </div>
+    </div>
+    <!--批准alert-->
+    <div id="permit" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="gridSystemModalLabel">来自网页的消息</h4>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="message-text" class="control-label">批准理由:</label>
+                <textarea class="form-control" id="message-text"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">回复</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!--驳回alert-->
+    <div id="refuse" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="gridSystemModalLabel">来自网页的消息</h4>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="message-text" class="control-label">驳回理由:</label>
+                <textarea class="form-control" id="message-text"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">回复</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../lib/js/jquery-3.2.1.js"><\/script>')</script>
+    <script src="../lib/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../lib/js/second.js"></script>
+</body>
+
+</html>

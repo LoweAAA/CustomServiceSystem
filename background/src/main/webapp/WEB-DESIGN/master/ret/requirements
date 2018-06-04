@@ -1,0 +1,5 @@
+how to query the answer, the final product can be deploied in one computer or serveral within or not the same computer as the JAVA client
+you need to use http scheme and specified keys, it will look like below:
+	http://<server ip>[:<port>]/?q=<query>&pid=<product id>
+here is a example:
+	http://localhost:44444/?q=hi&pid=007
