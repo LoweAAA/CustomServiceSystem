@@ -2,12 +2,10 @@ package respostorytest;
 
 
 import com.givemefive.customerservicesystem.config.RootConfig;
-import com.givemefive.customerservicesystem.model.CustomerService;
-import com.givemefive.customerservicesystem.model.Record;
-import com.givemefive.customerservicesystem.model.Repository;
-import com.givemefive.customerservicesystem.model.SystemQuestion;
+import com.givemefive.customerservicesystem.model.*;
 import com.givemefive.customerservicesystem.repostory.RecordDao;
 import com.givemefive.customerservicesystem.repostory.TestDao;
+import com.givemefive.customerservicesystem.service.AskForLeaveService;
 import com.givemefive.customerservicesystem.service.CSservice;
 import com.givemefive.customerservicesystem.service.RepositorySerivce;
 import com.givemefive.customerservicesystem.service.SQuesService;
@@ -17,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.sql.Date;
 import java.util.List;
 
 
@@ -35,19 +34,24 @@ public class TestDaoImplTest {
     private RepositorySerivce repositorySerivce;
 
 
+    @Autowired
+    private AskForLeaveService askForLeaveService;
+
+
     @Test
     public void addRepos(){
-        Repository repository = new Repository("1","how to close it?","push the button","close,how");
-        repositorySerivce.addQuestion(repository);
-        System.out.print(repository.getRepositoryKeyWords());
+        Date date = new Date(2018,6,8);
+        AskForLeave askForLeave = new AskForLeave("Zhao",date,"holiday");
+        askForLeaveService.addAfl(askForLeave);
+        System.out.print(askForLeave.getNote());
     }
 
 
 
     @Test
     public void getAllTest(){
-        List<com.givemefive.customerservicesystem.model.SystemQuestion> SQList = sQuesService.getAll();
-        System.out.print(SQList.get(0).getQuestionAnswer() );
+        List<AskForLeave> list = askForLeaveService.getAll();
+        System.out.print(list.get(0).getNote() );
     }
 
     @Test
@@ -57,4 +61,10 @@ public class TestDaoImplTest {
         cSservice.update(customerService);
         System.out.println(customerService.getCsAccount());
     }
+
+
+
+
+
+
 }
