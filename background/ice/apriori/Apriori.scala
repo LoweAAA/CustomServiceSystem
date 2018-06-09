@@ -1,14 +1,13 @@
 
 import scala.io.Source
-import scala.collection.immutable.List
-import scala.collection.immutable.Set
+import scala.collection.immutable.{List, Set}
 import java.io.File
+
 import scala.collection.mutable.Map
 
-class AprioriAlgorithm() {
-  var transactions : List[Set[Int]] =List(Set(0,2,4),Set(1,2,4),Set(0,1,2,4),Set(1,4))
-  var itemSet : Set[Int] = Set(0,1,2,3,4)
-
+class Apriori() {
+  var transactions : List[Set[Int]] =List(Set(0,2,4),Set(1,4),Set(0,1,3),Set(1,3))
+  var itemSet : Set[Int]=transactions.flatMap(x=>x).toSet
   var toRetItems : Map[Set[Int], Double] = Map()
   var associationRules : List[(Set[Int], Set[Int], Double)] = List()
 
@@ -40,6 +39,7 @@ class AprioriAlgorithm() {
       toRetItems += (itemComb._1 -> itemComb._2)
     }
     calculateAssociationRule(minConfidence)
+    saveRules()
   }
 
   def calculateAssociationRule(minConfidence : Double = 0.6) = {
@@ -51,5 +51,31 @@ class AprioriAlgorithm() {
         )
     )
     associationRules = associationRules.filter( rule => rule._3>minConfidence)
+  }
+  def getItems(userId:Int):Set[Int]={
+    val userItem=transactions(userId)
+    var resItem=Set[Int]()
+    userItem.foreach(t=> associationRules.foreach(x=>if(x._1.contains(t)) resItem++=(x._2)))
+   resItem--=userItem
+    resItem
+  }
+  def saveRules()={
+    import java.io._
+    val out = new ObjectOutputStream(new FileOutputStream("associationRules.obj"))
+    out.writeObject(associationRules)
+    out.close()
+  }
+  def readRules()={
+    import java.io._
+    val in=new ObjectInputStream(new FileInputStream("associationRules.obj"))
+    associationRules=in.readObject().asInstanceOf[List[(Set[Int], Set[Int], Double)]]
+    in.close()
+  }
+}
+object  Apriori{
+  def main(args:Array[String]): Unit ={
+    val ap=new Apriori();
+    ap.runApriori()
+    println(ap.getItems(1))
   }
 }
