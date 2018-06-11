@@ -12,7 +12,6 @@
     <!-- Bootstrap core CSS -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="../lib/css/bootstrap.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../lib/css/bootstrap-datetimepicker.css">
     <!-- Custom styles for this template -->
     <link href="../secondpage/second.css" rel="stylesheet">
 </head>
@@ -27,7 +26,13 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">personal</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <span>Samuel</span> <i class="fa fa-chevron-down"></i></a>
+              <ul class="dropdown-menu">
+                <li><a href="#"><i class="fa fa-sign-out"></i> <span>Logout</span></a></li>
+              </ul>
+            </li>
           </ul>
         </div>
       </div>
@@ -70,42 +75,16 @@
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">质量检测</h1>
           <!--时间选择器-->
-          <div class="row">  
-            <div class='col-sm-6'>  
-                <div class="form-group">  
-                    <label>选择开始时间：</label>  
-                    <!--指定 date标记-->  
-                    <div class='input-group date' id='datetimepicker1'>  
-                        <input type='text' class="form-control" />  
-                        <span class="input-group-addon">  
-                            <span class="glyphicon glyphicon-calendar"></span>  
-                        </span>  
-                    </div>  
-                </div>  
-            </div>  
-            <div class='col-sm-6'>  
-                <div class="form-group">  
-                    <label>选择结束时间：</label>  
-                    <!--指定 date标记-->  
-                    <div class='input-group date' id='datetimepicker2'>  
-                        <input type='text' class="form-control" />  
-                        <span class="input-group-addon">  
-                            <span class="glyphicon glyphicon-calendar"></span>  
-                        </span>  
-                    </div>  
-                </div>  
-            </div>  
-          </div>  
-          <form class="form-inline">
-            <div class="form-group">
-              <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
-              <div class="input-group">
-                <div class="input-group-addon">查询</div>
-                <input type="text" class="form-control" id="exampleInputAmount" placeholder="工号/姓名">
-              </div>
+          <div class="date-choose">
+            <div class="input-group" style="float: left;width: 45%;margin-bottom: 10px;">
+                <input type="month" class="form-control" id="exampleInputAmount" value="2018-03">
             </div>
-            <button type="submit" class="btn btn-primary">开始查询</button>
-          </form>
+            <div class="input-group-addon" style="float: left;width: 40px;height: 34px; ">至</div>
+            <div class="input-group" style="float: left;width: 45%;margin-bottom: 10px;">
+                <input type="month" class="form-control" id="exampleInputAmount" value="2018-03">
+            </div>
+          </div>
+          <!--end-->
           <div class="table-responsive page-heart">
             <table class="table table-striped">
               <thead>
@@ -184,12 +163,11 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../lib/js/jquery-3.2.1.js"></script>
     <script>window.jQuery || document.write('<script src="../lib/js/jquery-3.2.1.js"><\/script>')</script>
     <script type="text/javascript" src="../lib/js/echarts.min.js"></script>
     <script src="../lib/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../lib/js/moment-with-locales.js"></script>
-    <script type="text/javascript" src="../lib/js/bootstrap-datetimepicker.min.js"></script>
     <script type="text/javascript" src="../lib/js/second.js"></script>
 </body>
 

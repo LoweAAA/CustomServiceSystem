@@ -34,7 +34,13 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">personal</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <span>Samuel</span> <i class="fa fa-chevron-down"></i></a>
+              <ul class="dropdown-menu">
+                <li><a href="#"><i class="fa fa-sign-out"></i> <span>Logout</span></a></li>
+              </ul>
+            </li>
           </ul>
         </div>
       </div>
@@ -296,7 +302,7 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../lib/js/jquery-3.2.1.js"></script>
     <script>window.jQuery || document.write('<script src="../lib/js/jquery-3.2.1.js"><\/script>')</script>
     <script src="../lib/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../lib/js/second.js"></script>
