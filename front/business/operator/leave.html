@@ -34,7 +34,13 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">personal</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <span>Samuel</span> <i class="fa fa-chevron-down"></i></a>
+              <ul class="dropdown-menu">
+                <li><a href="#"><i class="fa fa-sign-out"></i> <span>Logout</span></a></li>
+              </ul>
+            </li>
           </ul>
         </div>
       </div>
@@ -66,11 +72,6 @@
               </li>
               <li>
                 <div class="link">
-                  <i class="fa fa-mobile"></i>产品管理
-                </div>
-              </li>
-              <li>
-                <div class="link">
                   <a href="../secondpage/account.html"><i class="fa fa-globe"></i>账户信息</a>
                 </div>
               </li>
@@ -84,7 +85,7 @@
               <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
               <div class="input-group">
                 <div class="input-group-addon">查询</div>
-                <input type="text" class="form-control" id="exampleInputAmount" placeholder="申请人/请假时间">
+                <input type="text" class="form-control" id="exampleInputAmount" placeholder="申请人">
               </div>
             </div>
             <button type="submit" class="btn btn-primary">开始查询</button>
@@ -301,7 +302,7 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../lib/js/jquery-3.2.1.js"></script>
     <script>window.jQuery || document.write('<script src="../lib/js/jquery-3.2.1.js"><\/script>')</script>
     <script src="../lib/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../lib/js/second.js"></script>

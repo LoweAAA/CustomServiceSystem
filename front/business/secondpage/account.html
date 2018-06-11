@@ -17,6 +17,7 @@
     <!-- Custom styles for this template -->
     <link href="../secondpage/second.css" rel="stylesheet">
     <link href="../secondpage/accounts.css" rel="stylesheet">
+    <link href="../secondpage/team.css" rel="stylesheet">
 </head>
 
 <body>
@@ -29,7 +30,13 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">personal</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <span>Samuel</span> <i class="fa fa-chevron-down"></i></a>
+              <ul class="dropdown-menu">
+                <li><a href="#"><i class="fa fa-sign-out"></i> <span>Logout</span></a></li>
+              </ul>
+            </li>
           </ul>
         </div>
       </div>
@@ -75,7 +82,7 @@
               <h4 class="title3">Profile</h4>
             <div class="profile-top">
               <img src="../img/profile-1.jpg" alt="">
-              <h4>恒众科技</h4>
+              <h4 id="com_id"></h4><!--账号-->
               <h5>一个集美貌与科技的公司</h5>
             </div>
             <div class="profile-text">
@@ -84,7 +91,7 @@
                   <i class="fa fa-envelope profile-icon"></i>
                 </div>
                 <div class="profile-right">
-                  <h4>恒众科技股份有限公司 </h4>
+                  <h4 id="com_name"></h4>
                   <p>公司名称</p>
                 </div> 
                 <div class="clearfix"> </div> 
@@ -94,7 +101,7 @@
                   <i class="fa fa-mobile profile-icon"></i>
                 </div>
                 <div class="profile-right">
-                  <h4>校长</h4>
+                  <h4 id="com_acc"></h4>
                   <p>公司法人代表</p>
                 </div> 
                 <div class="clearfix"> </div> 
@@ -104,7 +111,7 @@
                   <i class="fa fa-facebook profile-icon"></i>
                 </div>
                 <div class="profile-right">
-                  <h4>15111114488</h4>
+                  <h4 id="com_con"></h4>
                   <p>联系方式</p>
                 </div> 
                 <div class="clearfix"> </div> 
@@ -114,7 +121,7 @@
                   <i class="fa fa-mobile profile-icon"></i>
                 </div>
                 <div class="profile-right">
-                  <h4>15111114488@163.com</h4>
+                  <h4 id="com_mail"></h4>
                   <p>公司邮箱</p>
                 </div> 
                 <div class="clearfix"> </div> 
@@ -124,8 +131,8 @@
                   <i class="fa fa-facebook profile-icon"></i>
                 </div>
                 <div class="profile-right">
-                  <h4>facebook.com/user</h4>
-                  <p>Facebook</p>
+                  <h4 id="com_addr"></h4>
+                  <p>公司地址</p>
                 </div> 
                 <div class="clearfix"> </div> 
               </div>
@@ -134,28 +141,8 @@
                   <i class="fa fa-mobile profile-icon"></i>
                 </div>
                 <div class="profile-right">
-                  <h4>45896548</h4>
-                  <p>QQ号码</p>
-                </div> 
-                <div class="clearfix"> </div> 
-              </div>
-              <div class="profile-row">
-                <div class="profile-left">
-                  <i class="fa fa-facebook profile-icon"></i>
-                </div>
-                <div class="profile-right">
-                  <h4>2001-1-1</h4>
-                  <p>企业创建日期</p>
-                </div> 
-                <div class="clearfix"> </div> 
-              </div>
-              <div class="profile-row row-middle">
-                <div class="profile-left">
-                  <i class="fa fa-mobile profile-icon"></i>
-                </div>
-                <div class="profile-right">
-                  <h4>15254582252</h4>
-                  <p>人事部门联系方式</p>
+                  <h4 id="com_bal"></h4>
+                  <p>账户余额</p>
                 </div> 
                 <div class="clearfix"> </div> 
               </div>
@@ -177,6 +164,59 @@
               </ul>
             </div>
           </div>
+
+          <!--广告投放-->
+          <div class="team pt-section" data-name="Team" id="ptsection-four">
+            <div class="container">
+              <h3>广告投放</h3>
+              <div class="team-grids">
+                <div class="col-md-4 team-grid">
+                  <div class="team-grid1">
+                    <img src="../img/team/10.jpg" alt=" " class="img-responsive" />
+                    <h4>外包大赛<span> Archaeologist</span></h4>
+                    <div class="team-grid1-pos">
+                      <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur,</p>
+                      <ul>
+                        <li><a href="#" class="f1"></a></li>
+                        <li><a href="#" class="f2"></a></li>
+                        <li><a href="#" class="f3"></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 team-grid">
+                  <div class="team-grid1">
+                    <img src="../img/team/10.jpg" alt=" " class="img-responsive" />
+                    <h4>ACM大赛<span> Archaeologist</span></h4>
+                    <div class="team-grid1-pos">
+                      <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur,</p>
+                      <ul>
+                        <li><a href="#" class="f1"></a></li>
+                        <li><a href="#" class="f2"></a></li>
+                        <li><a href="#" class="f3"></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 team-grid">
+                  <div class="team-grid1">
+                    <img src="../img/team/10.jpg" alt=" " class="img-responsive" />
+                    <h4>互联网+大赛<span> Archaeologist</span></h4>
+                    <div class="team-grid1-pos">
+                      <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur,</p>
+                      <ul>
+                        <li><a href="#" class="f1"></a></li>
+                        <li><a href="#" class="f2"></a></li>
+                        <li><a href="#" class="f3"></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="clearfix"> </div>
+              </div>
+            </div>
+          </div>
+          <!--广告投放end-->
           <!--账户信息-->
           <p>&nbsp;</p>
           <h3>账户状态</h3>
@@ -207,7 +247,6 @@
           </div>  
       </div>
     </div>
-
     <!--账户续订内容框-->
     <div id="moreaccount" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
       <div class="modal-dialog modal-sm" role="document">
@@ -293,11 +332,51 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../lib/js/jquery-3.2.1.js"></script>
     <script>window.jQuery || document.write('<script src="../lib/js/jquery-3.2.1.js"><\/script>')</script>
     <script type="text/javascript" src="../lib/js/echarts.min.js"></script>
     <script src="../lib/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../lib/js/second.js"></script>
+    <script type="text/javascript">
+      var url = location.search;
+      if (url.indexOf("?") != -1) {
+        var str = url.substr(1); //substr()方法返回从参数值开始到结束的字符串；
+                  var strs = str.split( "&" );
+                  var theRequest = new Object();
+                  for (var i = 0; i < strs.length; i++) {
+                      theRequest[strs[i].split("=")[0]] = unescape( strs[i].split("=")[1] );
+                  }
+                  var id=theRequest["com_id"];
+                  alert(id);
+                  $.ajax({
+                      type: "POST",
+                      url: "http://118.25.100.232:8080/CustomServiceSystem/getinfo",
+                      data: {"com_id": JSON.parse(id)},
+                      //async: true,//同步
+                      //contentType: "application/json; charset=utf-8",
+                      //dataType: "text",
+                      success: function (data) {
+
+                          $.each(data, function (i,n) {
+                              if (i == "data") {
+
+                                  $("#com_id").append(n.companyId);
+                                  $("#com_name").append( n.companyName )
+                                  $("#com_acc").append( n.companyAccount );
+                                  $("#com_addr").append( n.companyAddress );
+                                  $("#com_mail").append( n.companyMail );
+                                  $("#com_con").append( n.companyContactInformation );
+                                  $("#com_bal").append( n.companyBalance );
+                              }
+
+                          });
+                      },
+                      error: function (XMLHttpRequest, textStatus, errorThrown) {
+                          alert("fault"+"<br>"+textStatus+","+XMLHttpRequest.status+","+XMLHttpRequest.readyState);
+                      }
+                  });
+      }
+    </script>
 </body>
 
 </html>
