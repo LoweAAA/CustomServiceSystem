@@ -47,11 +47,6 @@ public class TestDaoImplTest {
 
 
 
-    @Test
-    public void getAllTest(){
-        List<Repository> list = repositorySerivce.getRepos();
-        System.out.print(list.get(0).getRepositoryQuestion() );
-    }
 
     @Test
     public void saveTest(){

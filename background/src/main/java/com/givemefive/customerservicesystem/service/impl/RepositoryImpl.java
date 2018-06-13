@@ -46,11 +46,7 @@ public class RepositoryImpl implements RepositorySerivce {
 
     @Override
     public List<Repository> getRepos() {
-        List<Repository> list = new ArrayList<>();
-        if(true){
-            list = repositoryDao.getAll();
-        }
-
+        List<Repository> list = repositoryDao.getAll();
         return list;
 
     }
