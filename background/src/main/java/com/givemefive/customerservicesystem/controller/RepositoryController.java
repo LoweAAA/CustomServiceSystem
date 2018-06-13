@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.sql.Date;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -66,6 +67,20 @@ public class RepositoryController {
     public void deleteRepository(@RequestParam("reposId") String id){
         repositorySerivce.delete(id);
     }
+
+
+    @RequestMapping("getRepos")
+    @ResponseBody
+    public Map getRepos(){
+        Map map = new HashMap();
+        List<Repository> list = repositorySerivce.getRepos();
+        map.put("data",list);
+        map.put("status","查找所有问题");
+        return map;
+    }
+
+
+
 
 
 }

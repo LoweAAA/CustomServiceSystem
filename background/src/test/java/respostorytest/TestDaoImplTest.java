@@ -3,13 +3,12 @@ package respostorytest;
 
 import com.givemefive.customerservicesystem.config.RootConfig;
 import com.givemefive.customerservicesystem.model.*;
+
 import com.givemefive.customerservicesystem.repostory.RecordDao;
 import com.givemefive.customerservicesystem.repostory.TestDao;
-import com.givemefive.customerservicesystem.service.AskForLeaveService;
-import com.givemefive.customerservicesystem.service.CSservice;
-import com.givemefive.customerservicesystem.service.RepositorySerivce;
-import com.givemefive.customerservicesystem.service.SQuesService;
+import com.givemefive.customerservicesystem.service.*;
 import org.junit.Test;
+import org.junit.runner.Result;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
@@ -24,9 +23,7 @@ import java.util.List;
 public class TestDaoImplTest {
 
     @Autowired
-    private TestDao testDao;
-    @Autowired
-    private SQuesService sQuesService;
+    private ComlService comlService;
 
     @Autowired
     private CSservice cSservice;
@@ -37,21 +34,23 @@ public class TestDaoImplTest {
     @Autowired
     private AskForLeaveService askForLeaveService;
 
+    private com.givemefive.customerservicesystem.model.Constant.Result result;
+
 
     @Test
     public void addRepos(){
-        Date date = new Date(2018,6,8);
-        AskForLeave askForLeave = new AskForLeave("Zhao",date,"holiday");
-        askForLeaveService.addAfl(askForLeave);
-        System.out.print(askForLeave.getNote());
+        Coml coml = new Coml();
+        coml.build("question","similar","answer","apple","Tony");
+        result = comlService.addComl(coml);
+        System.out.println(result.getERRmessage());
     }
 
 
 
     @Test
     public void getAllTest(){
-        List<AskForLeave> list = askForLeaveService.getAll();
-        System.out.print(list.get(0).getNote() );
+        List<Repository> list = repositorySerivce.getRepos();
+        System.out.print(list.get(0).getRepositoryQuestion() );
     }
 
     @Test

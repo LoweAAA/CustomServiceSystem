@@ -1,32 +1,33 @@
 package com.givemefive.customerservicesystem.model;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 import java.sql.Date;
 
 @Entity
+@Table(name = "coml", schema = "CustomerSurvice", catalog = "")
 public class Coml {
-    private String comlId;
+    private int comlId;
     private String comlQuestion;
     private String comlSimilarQuestion;
     private String comlAnswer;
     private Date comlCreattime;
-    private int comlState;
-    private String companyId;
+    private Integer comlState;
+    private String companyName;
     private String comlEditor;
-    private Company companyByCompanyId;
 
     @Id
-    @Column(name = "coml_id")
-    public String getComlId() {
+    @Column(name = "coml_id", nullable = false)
+    public int getComlId() {
         return comlId;
     }
 
-    public void setComlId(String comlId) {
+    public void setComlId(int comlId) {
         this.comlId = comlId;
     }
 
     @Basic
-    @Column(name = "coml_question")
+    @Column(name = "coml_question", nullable = false, length = 1000)
     public String getComlQuestion() {
         return comlQuestion;
     }
@@ -36,7 +37,7 @@ public class Coml {
     }
 
     @Basic
-    @Column(name = "coml_similar_question")
+    @Column(name = "coml_similar_question", nullable = false, length = 10000)
     public String getComlSimilarQuestion() {
         return comlSimilarQuestion;
     }
@@ -46,7 +47,7 @@ public class Coml {
     }
 
     @Basic
-    @Column(name = "coml_answer")
+    @Column(name = "coml_answer", nullable = false, length = 1000)
     public String getComlAnswer() {
         return comlAnswer;
     }
@@ -56,7 +57,7 @@ public class Coml {
     }
 
     @Basic
-    @Column(name = "coml_creattime")
+    @Column(name = "coml_creattime", nullable = true)
     public Date getComlCreattime() {
         return comlCreattime;
     }
@@ -66,27 +67,27 @@ public class Coml {
     }
 
     @Basic
-    @Column(name = "coml_state")
-    public int getComlState() {
+    @Column(name = "coml_state", nullable = true)
+    public Integer getComlState() {
         return comlState;
     }
 
-    public void setComlState(int comlState) {
+    public void setComlState(Integer comlState) {
         this.comlState = comlState;
     }
 
     @Basic
-    @Column(name = "company_id",insertable = false,updatable = false)
-    public String getCompanyId() {
-        return companyId;
+    @Column(name = "company_name", nullable = false, length = 20)
+    public String getCompanyName() {
+        return companyName;
     }
 
-    public void setCompanyId(String companyId) {
-        this.companyId = companyId;
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
     }
 
     @Basic
-    @Column(name = "coml_editor")
+    @Column(name = "coml_editor", nullable = true, length = 20)
     public String getComlEditor() {
         return comlEditor;
     }
@@ -95,6 +96,17 @@ public class Coml {
         this.comlEditor = comlEditor;
     }
 
+
+    public void build(String comlQuestion,String comlSimilarQuestion,String comlAnswer,String companyName,String editor){
+        this.comlQuestion = comlQuestion;
+        this.comlSimilarQuestion = comlSimilarQuestion;
+        this.comlAnswer = comlAnswer;
+        this.companyName = companyName;
+        this.comlEditor = editor;
+
+    }
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -102,15 +114,15 @@ public class Coml {
 
         Coml coml = (Coml) o;
 
-        if (comlState != coml.comlState) return false;
-        if (comlId != null ? !comlId.equals(coml.comlId) : coml.comlId != null) return false;
+        if (comlId != coml.comlId) return false;
         if (comlQuestion != null ? !comlQuestion.equals(coml.comlQuestion) : coml.comlQuestion != null) return false;
         if (comlSimilarQuestion != null ? !comlSimilarQuestion.equals(coml.comlSimilarQuestion) : coml.comlSimilarQuestion != null)
             return false;
         if (comlAnswer != null ? !comlAnswer.equals(coml.comlAnswer) : coml.comlAnswer != null) return false;
         if (comlCreattime != null ? !comlCreattime.equals(coml.comlCreattime) : coml.comlCreattime != null)
             return false;
-        if (companyId != null ? !companyId.equals(coml.companyId) : coml.companyId != null) return false;
+        if (comlState != null ? !comlState.equals(coml.comlState) : coml.comlState != null) return false;
+        if (companyName != null ? !companyName.equals(coml.companyName) : coml.companyName != null) return false;
         if (comlEditor != null ? !comlEditor.equals(coml.comlEditor) : coml.comlEditor != null) return false;
 
         return true;
@@ -118,27 +130,14 @@ public class Coml {
 
     @Override
     public int hashCode() {
-        int result = comlId != null ? comlId.hashCode() : 0;
+        int result = comlId;
         result = 31 * result + (comlQuestion != null ? comlQuestion.hashCode() : 0);
         result = 31 * result + (comlSimilarQuestion != null ? comlSimilarQuestion.hashCode() : 0);
         result = 31 * result + (comlAnswer != null ? comlAnswer.hashCode() : 0);
         result = 31 * result + (comlCreattime != null ? comlCreattime.hashCode() : 0);
-        result = 31 * result + comlState;
-        result = 31 * result + (companyId != null ? companyId.hashCode() : 0);
+        result = 31 * result + (comlState != null ? comlState.hashCode() : 0);
+        result = 31 * result + (companyName != null ? companyName.hashCode() : 0);
         result = 31 * result + (comlEditor != null ? comlEditor.hashCode() : 0);
         return result;
     }
-/*
-
-    @ManyToOne
-    @JoinColumn(name = "company_id", referencedColumnName = "company_id", nullable = false)
-    public Company getCompanyByCompanyId() {
-        return companyByCompanyId;
-    }
-
-    public void setCompanyByCompanyId(Company companyByCompanyId) {
-        this.companyByCompanyId = companyByCompanyId;
-    }
-*/
-
 }

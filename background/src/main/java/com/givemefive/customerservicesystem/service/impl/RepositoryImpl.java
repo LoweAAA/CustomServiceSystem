@@ -6,6 +6,9 @@ import com.givemefive.customerservicesystem.service.RepositorySerivce;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Service
 public class RepositoryImpl implements RepositorySerivce {
@@ -41,6 +44,16 @@ public class RepositoryImpl implements RepositorySerivce {
 
     }
 
+    @Override
+    public List<Repository> getRepos() {
+        List<Repository> list = new ArrayList<>();
+        if(true){
+            list = repositoryDao.getAll();
+        }
+
+        return list;
+
+    }
 
 
 }
