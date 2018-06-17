@@ -14,6 +14,7 @@
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="../lib/js/second.js"></script>
     <script src="../lib/js/bootstrap.min.js"></script>
+    
     <!-- Bootstrap core CSS -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="../lib/css/bootstrap.min.css" rel="stylesheet">
@@ -118,51 +119,14 @@
             </div>
 
             <h3>问题产品排行</h3>
-            <div id="container1"  style="width: 800px;height:500px;"></div>
-              <script src="../lib/js/产品问题.js"></script>
-      
-            
-
+            <div id="production"  style="width: 800px;height:500px;"></div>
+             
             <h3>提问关键词统计</h3>
-            <div id="question" style="height: 400px;width:600px;margin-bottom: 50px;"></div>
-            <script src="../lib/js/关键词.js"></script>
-
+            <div id="keywords" style="height: 400px;width:600px;margin-bottom: 50px;"></div>
+            
             <h3>客服评价</h3>
-            <div id="evaluate" style="height: 400px;width:600px;margin-bottom: 50px;"></div>
-            <script src="../lib/js/客服评价.js"></script>
-            <script type="text/javascript">
-              var myChart1 = echarts.init(document.getElementById('container1'));
-              var myChart2 = echarts.init(document.getElementById("question"));
-              var myChart3 = echarts.init(document.getElementById('evaluate'));
-              myChart1.setOption(option1);
-              myChart2.setOption(option2);
-              myChart3.setOption(option3);
-              $(document).ready(function(){
-                  $.get("../lib/php/get.php",function(data,status){
-                      datas=JSON.parse(data).map(function(e){ return {name:e.word_class,value:e.one_ago};});  
-                      myChart2.setOption({
-                          series : {
-                              name:'关键词',
-                              data:datas, 
-                          }}); });  
-                  $.get("../lib/php/get1.php",function(data,status){
-                       datas=[['production', 'last  month', 'two month ', 'three month ']].concat(JSON.parse(data).map(function(e){
-                           return [e.pro_id,e.one_ago,e.two_ago,e.three_ago];}));   
-                           myChart1.setOption({
-                            dataset: {
-                              source: datas
-                            }}); });
-                  $.get("../lib/php/get2.php",function(data,status){
-                    datas=[['servicer','socre']].concat(JSON.parse(data).map(function(e){
-                           return [e.service_id,e.one_ago];}));   
-                      myChart3.setOption({
-                        dataset: {
-                              source: datas
-                            }}); });
-                      }); 
+            <div id="Evaluation" style="height: 400px;width:600px;margin-bottom: 50px;"></div>
 
-          </script>
-       
           </div>
         </div>
       </div>
@@ -173,8 +137,10 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-
-
+    <script src="../lib/js/产品问题.js"></script>
+    <script src="../lib/js/关键词.js"></script>
+    <script src="../lib/js/客服评价.js"></script>
+    <script src="../lib/js/loadecharts.js"></script>
     <!--js ,cs 文件放Head-->
 </body>
 
