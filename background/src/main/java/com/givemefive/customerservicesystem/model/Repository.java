@@ -16,8 +16,6 @@ public class Repository {
     private int repositoryConsultationTimes;
     private String repositoryEditor;
 
-    public Repository() {
-    }
 
 
     @Id
@@ -115,11 +113,16 @@ public class Repository {
 
 
 
-    public Repository(String repositoryId,String repositoryQuestion,String repositoryResponse,String repositoryKeyWords){
+    public void build(String repositoryId, String repositoryQuestion, String repositoryResponse, String repositoryKeyWords, java.util.Date date){
         this.repositoryId = repositoryId;
         this.repositoryQuestion = repositoryQuestion;
         this.repositoryResponse = repositoryResponse;
         this.repositoryKeyWords = repositoryKeyWords;
+        this.repositoryCreationTime = new Date(date.getTime());
+        this.proQuestionId = " ";
+        this.repositoryConsultationTimes = 0;
+        this.repositoryEditor = " ";
+        this.repositoryState = 0;
     }
 
 
