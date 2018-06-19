@@ -7,6 +7,7 @@ import com.givemefive.customerservicesystem.model.*;
 import com.givemefive.customerservicesystem.repostory.RecordDao;
 import com.givemefive.customerservicesystem.repostory.TestDao;
 import com.givemefive.customerservicesystem.service.*;
+import com.givemefive.customerservicesystem.service.util.GetRecentDateService;
 import org.junit.Test;
 import org.junit.runner.Result;
 import org.junit.runner.RunWith;
@@ -32,12 +33,24 @@ public class TestDaoImplTest {
     private CSservice cSservice;
     @Autowired
     private RepositorySerivce repositorySerivce;
+    @Autowired
+    private AdminService adminService;
 
 
     @Autowired
     private AskForLeaveService askForLeaveService;
 
     private com.givemefive.customerservicesystem.model.Constant.Result result;
+
+    @Autowired
+    private GetRecentDateService getRecentDateService;
+
+@Test
+public void loginconfirm(){
+    result = adminService.loginConfirm("admin@163.com","123");
+    System.out.println(result.isComplete()+result.getERRmessage());
+}
+
 
 
     @Test
@@ -54,30 +67,22 @@ public class TestDaoImplTest {
         System.out.println(list.get(0).getRepositoryKeyWords());
     }
 
+
+
+
+
     @Test
     public void addRepos(){
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        java.util.Date date = new java.util.Date();
-        String ss = sdf.format(date);
-        Date date1 = null;
+        Repository repository = new Repository();
         try {
-            java.util.Date date3 = sdf.parse(ss);
-            date1 = new Date(date3.getTime());
+            java.util.Date date = getRecentDateService.getToday();
+            repository.build("aaa","bbb","ccc","ddd",date);
+        }catch (Exception e){
+            System.out.println(e+"333");
+        }//ok
 
-        }catch (ParseException e){
-            e.printStackTrace();
-        }
-
-        //long l = Long.parseLong(ss);
-
-
-
-        System.out.println(date1);
-       /* Repository repository = new Repository();
-
-        repository.build("aaa","bbb","ccc","ddd",l);
         result = repositorySerivce.addQuestion(repository);
-        System.out.println(repository.getRepositoryCreationTime()+result.getERRmessage());*/
+        System.out.println(repository.getRepositoryCreationTime()+result.getERRmessage());
     }
 
 

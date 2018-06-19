@@ -10,7 +10,6 @@ import java.text.SimpleDateFormat;
 @Service
 public class GetRecentDateServiceImpl implements GetRecentDateService {
 
-    private java.util.Date today = new java.util.Date();
 
     /*
     获取当前时间
@@ -20,15 +19,20 @@ public class GetRecentDateServiceImpl implements GetRecentDateService {
     @Override
     public java.util.Date getToday() {
 
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+        java.util.Date today = new java.util.Date();
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         String ss = sdf.format(today);
         java.util.Date date = null;
         try {
             date = sdf.parse(ss);
         } catch (ParseException e) {
             e.printStackTrace();
+            System.out.println("aaa");
         }
         return date;
+
+
     }
 
 

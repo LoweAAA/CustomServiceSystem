@@ -25,10 +25,12 @@ public class RepositoryImpl implements RepositorySerivce {
 
     @Override
     public Result addQuestion(Repository repository){
+        result = new Result();
         try{
             repositoryDao.addQuestion(repository);
             result.setERRmessage(Constant.ADD_SUCCESSFUL);
             result.setComplete(true);
+            System.out.println("222");
         }catch (Exception e){
             System.out.println("qqqqq"+e);
             result.setERRmessage(Constant.ADD_FAILED+":"+e);
