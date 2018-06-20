@@ -2,6 +2,7 @@ package respostorytest;
 
 
 import com.givemefive.customerservicesystem.config.RootConfig;
+import com.givemefive.customerservicesystem.controller.RepositoryController;
 import com.givemefive.customerservicesystem.model.*;
 
 import com.givemefive.customerservicesystem.repostory.RecordDao;
@@ -18,8 +19,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.HashMap;
 import java.util.List;
-
+import java.util.Map;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -35,6 +37,11 @@ public class TestDaoImplTest {
     private RepositorySerivce repositorySerivce;
     @Autowired
     private AdminService adminService;
+
+
+
+    private RepositoryController repositoryController = new RepositoryController();
+
 
 
     @Autowired
@@ -75,14 +82,14 @@ public void loginconfirm(){
     public void addRepos(){
         Repository repository = new Repository();
         try {
-            java.util.Date date = getRecentDateService.getToday();
-            repository.build("aaa","bbb","ccc","ddd",date);
+
         }catch (Exception e){
             System.out.println(e+"333");
         }//ok
 
-        result = repositorySerivce.addQuestion(repository);
-        System.out.println(repository.getRepositoryCreationTime()+result.getERRmessage());
+
+        Map map = repositoryController.addRepository("555","aaa","333","999");
+        System.out.println(map.get(0));
     }
 
 

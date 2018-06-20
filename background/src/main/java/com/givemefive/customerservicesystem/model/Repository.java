@@ -29,7 +29,7 @@ public class Repository {
     }
 
     @Basic
-    @Column(name = "pro_question_id",insertable = false,updatable = false,nullable = true)
+    @Column(name = "pro_question_id",nullable = true)
     public String getProQuestionId() {
         return proQuestionId;
     }
