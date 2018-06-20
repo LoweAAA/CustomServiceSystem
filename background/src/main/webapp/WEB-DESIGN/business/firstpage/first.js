@@ -28,3 +28,29 @@ $(document).ready(function() {
                   });
               });
 });
+//客服注册
+$(document).ready(function() {
+              $("#com_regist").click(function(){
+                  $.ajax({
+                    type: "POST",
+                    data: {
+                      "id":$("#com_id").val(),
+                      "companyname":$("#companyname").val(),
+                      "name":$("#name").val(),
+                      "contractinfo":$("#contractinfo").val(),
+                      "account":$("#account").val(),
+                      "password":$("#password").val()
+                    },
+                    url: "http://118.25.100.232:8080/CustomServiceSystem/CSsignin",
+                    dataType: "json",
+                    success:function(data){
+                      $.each(data,function(i,item){
+                        if(i=="data"){
+                                  alert("注册成功！");
+                                  window.location.href =url;
+                              }
+                      });
+                    }
+                  });
+              });
+    });

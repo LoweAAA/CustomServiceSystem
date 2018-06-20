@@ -110,7 +110,18 @@
               </div>
         </div>
         <div class="table-responsive page-heart">
-            <table id="table" class="table table-striped">
+            <table id="table" 
+                   class="table table-striped"
+                   data-toolbar="#toolbar"
+                   data-search="true"
+                   data-show-refresh="true"
+                   data-show-export="true"
+                   data-minimum-count-columns="2"
+                   data-show-pagination-switch="true"
+                   data-pagination="true"
+                   data-id-field="repositoryId"
+                   data-page-list="[10, 25, 50, 100, ALL]"
+                   data-side-pagination="client">
             </table>
         </div>
       </div>
@@ -147,16 +158,12 @@
                 <textarea class="form-control" id="reposKeywords"></textarea>
               </div>
               <div class="form-group">
-                <label for="message-text" class="control-label">state：</label>
-                <textarea class="form-control" id="reposState"></textarea>
-              </div>
-              <div class="form-group">
-                <label for="message-text" class="control-label">创建时间:</label>
-                <textarea class="form-control" id="reposCreatetime"></textarea>
-              </div>
-              <div class="form-group">
-                <label for="message-text" class="control-label">consultation_times:</label>
+                <label for="message-text" class="control-label">访问次数:</label>
                 <textarea class="form-control" id="reposCosultTime"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="message-text" class="control-label">reporsState:</label>
+                <textarea class="form-control" id="reposState"></textarea>
               </div>
               <div class="form-group">
                 <label for="message-text" class="control-label">录入员:</label>
@@ -214,7 +221,7 @@
     <script src="../lib/js/bootstrap-table-zh-CN.js"></script>
     <script type="text/javascript" src="../lib/js/second.js"></script>
     <script type="text/javascript">
-    //新增问题
+      //新增问题
     $(document).ready(function() {
               $("#que_submit").click(function(){
                   $.ajax({
@@ -238,62 +245,60 @@
                   });
               });
     });
-    $('#table').bootstrapTable({
-          url: 'http://118.25.100.232:8080/CustomServiceSystem/getRepos',
-          columns: [{
-              field: 'reposId',
-              title: 'Item ID'
-          }, 
-          {
-              field: 'pro_ques_Id',
-              title: 'Ques_ID'
-          },
-          {
-              field: 'reposQues',
-              title: 'QUESTION'
-          },
-          {
-              field: 'reposAnswer',
-              title: 'ANSWER'
-          },
-          {
-              field: 'reposKeywords',
-              title: 'KEYWORDS'
-          },
-          {
-              field: 'reposState',
-              title: 'STATE'
-          },
-          {
-              field: 'reposCreatetime',
-              title: 'CREATTIME'
-          },
-          {
-              field: 'reposCosultTime',
-              title: 'CONSULTTIME'
-          },
-          {
-              field: 'editor',
-              title: 'EDITOR'
-          },
-          {
-              field: 'button',
-              title: '操作',
-              //events: actionEvents,
-              formatter:operateFormatter
-          }],
-          pagination:true
-    });
-    function operateFormatter(value,row,index){
-      return [
-      '<input type="button" id="que_editor" value="编辑" class="btn btn-default">',
-      '<input type="button" id="que_delete" value="删除" class="btn btn-default">'
-      ].join('');
+    </script>
+    <script type="text/javascript">
+    const $table = $('#table');
+    function initTable(){
+        $table.bootstrapTable({
+                  url: 'http://118.25.100.232:8080/CustomServiceSystem/getRepos',
+                  columns: [{
+                      field: 'repositoryId',
+                      title: 'Item ID'
+                  }, 
+                  {
+                      field: 'proQuestionId',
+                      title: 'Ques_ID'
+                  },
+                  {
+                      field: 'repositoryQuestion',
+                      title: '问题'
+                  },
+                  {
+                      field: 'repositoryResponse',
+                      title: '答案'
+                  },
+                  {
+                      field: 'repositoryKeyWords',
+                      title: '关键字'
+                  },
+                  {
+                      field: 'repositoryEditor',
+                      title: '录入员'
+                  },
+                  {
+                      field: 'button',
+                      title: '操作',
+                      events: operateEvents,
+                      formatter:operateFormatter
+                  }]
+            });
+    }
+    function operateFormatter(value, row, index) {
+            return [
+              '<a class="edit" href="javascript:void(0)" title="编辑" data-toggle="modal" data-target="#edit">',
+              '<i class="fa fa-edit"></i>',
+              '</a>  ',
+              '<a class="remove" href="javascript:void(0)" title="删除">',
+              '<i class="fa fa-remove"></i>',
+              '</a>'
+            ].join('');
     }
 
-    /*window.actionEvents = {
-      "click #que_editor":function(e,value,row,index){
-          $.ajax({
+    window.operateEvents = {
+      'click .edit': function (e, value, row, index) {
+        $(document).ready(function() {
+              $("#que_editor").click(function(){
+                  $.ajax({
                     type: "POST",
                     data: {
                       "reposId":$("#reposId").val(),
@@ -302,7 +307,6 @@
                       "reposAnswer":$("#reposAnswer").val(),
                       "reposKeywords":$("#reposKeywords").val(),
                       "reposState":$("#reposState").val(),
-                      "reposCreatetime":$("#reposCreatetime").val(),
                       "reposCosultTime":$("#reposCosultTime").val(),
                       "editor":$("#editor").val()
                     },
@@ -317,21 +321,19 @@
                       });
                     }
                   });
+              });
+    });
       },
-      "click #que_delete":function(e,value,row,index){
-        $.ajax({
-                    type: "POST",
-                    data: {
-                      "reposId":$("#reposId").val()
-                    },
-                    url: "http://118.25.100.232:8080/CustomServiceSystem/deleteRepos",
-                    dataType: "json",
-                    success:function(data){
-                      alert("删除成功");
-                    }
-                  });
+      'click .remove': function(e, value, {repositoryId}, index) {
+        $table.bootstrapTable('remove', {
+          field: 'repositoryId',
+          values: [repositoryId]
+        });
       }
-    };*/
+      };
+      $(() => {
+        initTable();
+      })
     </script>  
 </body>
 
