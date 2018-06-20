@@ -7,6 +7,8 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 
 @org.springframework.stereotype.Repository
 @Transactional
@@ -44,5 +46,16 @@ public class RepositoryDaoImpl implements RepositoryDao {
         hql = "FROM Repository a WHERE a.repositoryId = ?";
         return (Repository)session().createQuery(hql).setParameter(0,id).uniqueResult();
     }
+
+    @Override
+    public List<Repository> getAll() {
+        hql = "FROM Repository";
+        return session().createQuery(hql).list();
+    }
+
+    /*@Override
+    public List<Repository> queryByCate(String cateName){
+        hql = "FROM Repository a,Category b WHERE "
+    }*/
 
 }

@@ -16,12 +16,10 @@ public class Repository {
     private int repositoryConsultationTimes;
     private String repositoryEditor;
 
-    public Repository() {
-    }
-    //private ProductQuestion productQuestionByProQuestionId;
+
 
     @Id
-    @Column(name = "repository_id")
+    @Column(name = "repository_id",nullable = false)
     public String getRepositoryId() {
         return repositoryId;
     }
@@ -31,7 +29,7 @@ public class Repository {
     }
 
     @Basic
-    @Column(name = "pro_question_id",insertable = false,updatable = false)
+    @Column(name = "pro_question_id",insertable = false,updatable = false,nullable = true)
     public String getProQuestionId() {
         return proQuestionId;
     }
@@ -41,7 +39,7 @@ public class Repository {
     }
 
     @Basic
-    @Column(name = "repository_question")
+    @Column(name = "repository_question",nullable = false)
     public String getRepositoryQuestion() {
         return repositoryQuestion;
     }
@@ -51,7 +49,7 @@ public class Repository {
     }
 
     @Basic
-    @Column(name = "repository_response")
+    @Column(name = "repository_response",nullable = false)
     public String getRepositoryResponse() {
         return repositoryResponse;
     }
@@ -61,7 +59,7 @@ public class Repository {
     }
 
     @Basic
-    @Column(name = "repository_key_words")
+    @Column(name = "repository_key_words",nullable = false)
     public String getRepositoryKeyWords() {
         return repositoryKeyWords;
     }
@@ -71,7 +69,7 @@ public class Repository {
     }
 
     @Basic
-    @Column(name = "repository_state")
+    @Column(name = "repository_state",nullable = true)
     public int getRepositoryState() {
         return repositoryState;
     }
@@ -81,7 +79,7 @@ public class Repository {
     }
 
     @Basic
-    @Column(name = "repository_creation_time")
+    @Column(name = "repository_creation_time",nullable = true)
     public Date getRepositoryCreationTime() {
         return repositoryCreationTime;
     }
@@ -91,7 +89,7 @@ public class Repository {
     }
 
     @Basic
-    @Column(name = "repository_consultation_times")
+    @Column(name = "repository_consultation_times",nullable = true)
     public int getRepositoryConsultationTimes() {
         return repositoryConsultationTimes;
     }
@@ -101,7 +99,7 @@ public class Repository {
     }
 
     @Basic
-    @Column(name = "repository_editor")
+    @Column(name = "repository_editor",nullable = true)
     public String getRepositoryEditor() {
         return repositoryEditor;
     }
@@ -115,11 +113,16 @@ public class Repository {
 
 
 
-    public Repository(String repositoryId,String repositoryQuestion,String repositoryResponse,String repositoryKeyWords){
+    public void build(String repositoryId, String repositoryQuestion, String repositoryResponse, String repositoryKeyWords, java.util.Date date){
         this.repositoryId = repositoryId;
         this.repositoryQuestion = repositoryQuestion;
         this.repositoryResponse = repositoryResponse;
         this.repositoryKeyWords = repositoryKeyWords;
+        this.repositoryCreationTime = new Date(date.getTime());
+        this.proQuestionId = " ";
+        this.repositoryConsultationTimes = 0;
+        this.repositoryEditor = " ";
+        this.repositoryState = 0;
     }
 
 

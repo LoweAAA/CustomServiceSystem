@@ -2,6 +2,7 @@ package com.givemefive.customerservicesystem.repostory;
 
 import com.givemefive.customerservicesystem.model.Repository;
 
+import java.util.List;
 
 
 public interface RepositoryDao {
@@ -13,6 +14,10 @@ public interface RepositoryDao {
     void update(Repository repository);
 
     Repository queryById(String id);
+
+    /*List<Repository> queryByCate(String cateName);*/
+
+    List<Repository> getAll();
 
 
 }

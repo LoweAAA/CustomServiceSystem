@@ -1,13 +1,18 @@
 package com.givemefive.customerservicesystem.service;
 
+import com.givemefive.customerservicesystem.model.Constant.Result;
 import com.givemefive.customerservicesystem.model.Repository;
+
+import java.util.List;
 
 public interface RepositorySerivce {
 
-    void addQuestion(Repository repository);
+    Result addQuestion(Repository repository);
 
-    void delete(String id);
+    Result delete(String id);
 
-    String update(Repository repository);
+    Result update(Repository repository);
+
+    List<Repository> getRepos();
 
 }
