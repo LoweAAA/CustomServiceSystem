@@ -26,7 +26,10 @@ public class RepositoryController {
     @Autowired
     private RepositorySerivce repositorySerivce;
 
+    @Autowired
     private GetRecentDateService getRecentDateService;
+
+
 
     private Result result = new Result();
 
