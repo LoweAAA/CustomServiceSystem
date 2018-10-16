@@ -1,14 +1,11 @@
 package com.givemefive.customerservicesystem.controller;
 
 
-import com.givemefive.customerservicesystem.model.Category;
+import com.givemefive.customerservicesystem.model.bean.Category;
 import com.givemefive.customerservicesystem.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.List;
@@ -21,7 +18,7 @@ public class CateController {
     @Autowired
     private CategoryService categoryService;
 
-    @RequestMapping("queryByComName")
+    @RequestMapping(value = "queryByComName",method = RequestMethod.GET)
     @ResponseBody
     public Map queryByComName(@RequestParam("com_name") String com_name){
         Map map = new HashMap();

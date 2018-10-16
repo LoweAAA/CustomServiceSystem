@@ -2,7 +2,7 @@ package com.givemefive.customerservicesystem.repostory.impl;
 
 
 import com.givemefive.customerservicesystem.repostory.UserDao;
-import com.givemefive.customerservicesystem.model.User;
+import com.givemefive.customerservicesystem.model.bean.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.hibernate.*;

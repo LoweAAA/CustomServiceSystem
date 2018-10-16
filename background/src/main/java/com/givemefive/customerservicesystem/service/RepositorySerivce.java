@@ -1,7 +1,7 @@
 package com.givemefive.customerservicesystem.service;
 
 import com.givemefive.customerservicesystem.model.Constant.Result;
-import com.givemefive.customerservicesystem.model.Repository;
+import com.givemefive.customerservicesystem.model.bean.Repository;
 
 import java.util.List;
 

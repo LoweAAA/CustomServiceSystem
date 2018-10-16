@@ -2,29 +2,11 @@ package com.givemefive.customerservicesystem.model.Constant;
 
 public class Constant {
 
-    public final static String SUCCESSFUL = "Succeed!";
+    public final static String LOGIN_CONFIRM_PASS = "1";                   //登录成功
+    public final static String LOGIN_CONFIRM_FAILD = "0";                  //登录失败
 
-    public final static String FAIL = "Fail!";
 
-    public final static String UNKNOWERROR = "Unknow ERROR.";
+    public final static String TOKEN_MD5_PART = "aBc12HJgu.;'[.[]sb";      //token验证密码一部分
 
-    public final static String CONTROLLER_UNKOWERROR = UNKNOWERROR + " #CONTROLLER# ";
 
-    public final static String DATA_IS_EMPTY = "Data is empty!";//传入数据为空
-
-    public final static String UPDATE_SUCCESSFUL = "Update operation succeed!";//更新成功
-
-    public final static String ADD_SUCCESSFUL = "Added successfully!";//添加成功
-
-    public final static String DELETE_SUCCESSFUL = "Delete successfully!";//删除成功
-
-    public final static String UPDATE_FAILED = "Update operation failed!";
-
-    public final static String ADD_FAILED = "Added failed!";
-
-    public final static String DELETE_FAILED = "Delete failed!";
-
-    public final static String ITEM_ISNOT_EXIST = "This item is not exist!";
-
-    public final static String WRONG_ID_ERROR = "Something wrong with Id.";
 }

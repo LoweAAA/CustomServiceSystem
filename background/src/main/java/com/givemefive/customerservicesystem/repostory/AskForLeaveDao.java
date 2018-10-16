@@ -1,7 +1,6 @@
 package com.givemefive.customerservicesystem.repostory;
 
-import com.givemefive.customerservicesystem.model.AskForLeave;
-import org.codehaus.jackson.annotate.JsonTypeInfo;
+import com.givemefive.customerservicesystem.model.bean.AskForLeave;
 
 import java.util.List;
 

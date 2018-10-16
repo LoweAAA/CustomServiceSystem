@@ -1,6 +1,6 @@
 package com.givemefive.customerservicesystem.service;
 
-import com.givemefive.customerservicesystem.model.ProductQuestion;
+import com.givemefive.customerservicesystem.model.bean.ProductQuestion;
 
 import java.util.List;
 

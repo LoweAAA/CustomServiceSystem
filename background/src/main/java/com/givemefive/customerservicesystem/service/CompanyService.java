@@ -1,6 +1,7 @@
 package com.givemefive.customerservicesystem.service;
 
-import com.givemefive.customerservicesystem.model.Company;
+import com.givemefive.customerservicesystem.model.Constant.Result;
+import com.givemefive.customerservicesystem.model.bean.Company;
 
 import java.util.List;
 
@@ -14,7 +15,7 @@ public interface CompanyService {
 
     List<Company> getAll();
 
-    String loginconfirm(String mail,String password);
+    Result loginconfirm(String mail, String password);
 
     Company queryById(String id);
 

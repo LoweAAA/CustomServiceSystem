@@ -4,7 +4,7 @@
 <h2>Hello World!</h2>
 <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js"></script>
 <script type="text/javascript">
-    var url = location.search; //获取url中"?"符后的字串 ('?modFlag=business&role=1')
+    /*var url = location.search; //获取url中"?"符后的字串 ('?modFlag=business&role=1')
 
     if ( url.indexOf( "?" ) != -1 ) {
         var str = url.substr(1); //substr()方法返回从参数值开始到结束的字符串；
@@ -14,42 +14,72 @@
             theRequest[strs[i].split("=")[0]] = unescape( strs[i].split("=")[1] );
         }
         var id=theRequest["com_id"];
-        alert(id);
-        $(document).ready(function() {
+        alert(id);*/
+    $(document).ready(function() {
+        $("#com_submit").click(function(){
             $.ajax({
                 type: "POST",
-                url: "getinfo",
-                data: {"com_id": JSON.parse(id)},
-                //async: true,//同步
+                data: {"com_mail": $("#commail").val(), "com_password": $("#compassword").val()},
+                //url:"http://118.25.100.232:8080/CustomServiceSystem/ComLoginconfirm",
+                url:"company/test",
+                //url: "../../../ComLoginconfirm",
                 //contentType: "application/json; charset=utf-8",
-                //dataType: "text",
+                dataType: "json",
                 success: function (data) {
-                    $.each(data, function (i,n) {
-                        if (i == "data") {
+                    console.log(data.data);
 
-                            $("#comid").append(n.companyName);
+                    if (data.complete == false){
+                        alert(data.errmessage);
+                        return ;
+                    }
 
-                            //$("#myModal").modal("show");
+                    if (data.flag == false){
+                        alert(data.errmessage);
+                    }else {
+                        alert(data.errmessage);
 
-                        }
+                        $.cookie('comToken', data.token);
+                        $.cookie('comId',data.data.id);
+                        //$.cookie('compassword',$("#compassword").val());
 
-                    });
+                        var url = "../secondpage/account.html";
+
+                        window.location.href =url;
+                    }
+
+                    // changeToTable(data);
+                    // $.each(data, function(i,item){
+                    //     if(i=="complete" && item != true){
+                    //         debugger;
+                    //         return ;
+                    //     }else if (i == "errmessage"){
+                    //         debugger;
+                    //         var  errMessage = item.val();
+                    //         var url = "../secondpage/account.html?com_id=" + id;
+                    //         alert(errMessage);
+                    //         //window.location.href =url;
+                    //     }
+                    //});
+
+
                 },
-                error: function (XMLHttpRequest, textStatus, errorThrown) {
-                    alert("fault"+textStatus);
-                    alert(XMLHttpRequest.status);
-                    alert(XMLHttpRequest.readyState);
-                    alert(errorThrown)
-                }
+                error: function (data) {
+                    // $("#logininfo").text("请求超时");
+                    alert(data.errmessage);
+                },
             });
-        })
-    }
+        });
+    });
+
 </script>
 <form>
     <div  name="com_id">
         <p id="comid"></p>
     </div><br>
-    <input id="compassword" name="compassword">
+    <div  name="com_password">
+        <p id="compassword"></p>
+    </div><br>
+    <input id="submit" name="submit">
 </form>
 
 

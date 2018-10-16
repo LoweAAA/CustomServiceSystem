@@ -1,8 +1,8 @@
 package com.givemefive.customerservicesystem.controller;
 
 
-import com.givemefive.customerservicesystem.model.Coml;
-import com.givemefive.customerservicesystem.model.Constant.Constant;
+import com.givemefive.customerservicesystem.model.bean.Coml;
+import com.givemefive.customerservicesystem.model.VO.VOConstant;
 import com.givemefive.customerservicesystem.model.Constant.Result;
 import com.givemefive.customerservicesystem.service.ComlService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +24,6 @@ public class ComlController {
     private ComlService comlService;
 
     private Result result;
-    private Constant constant = new Constant();
     private Coml coml;
     private Map<String,Object> map;
 
@@ -62,7 +61,7 @@ public class ComlController {
                 map.put("status",result.getERRmessage());
         }catch (Exception e){
                 System.out.println(e);
-                map.put("status",constant.CONTROLLER_UNKOWERROR);
+                map.put("status",VOConstant.CONTROLLER_UNKOWERROR);
         }
 
         return map;
@@ -75,10 +74,10 @@ public class ComlController {
         List<Coml> list = comlService.queryByCom(companyName);
         if(list == null){
             map.put("data",null);
-            map.put("status",constant.DATA_IS_EMPTY);
+            map.put("status",VOConstant.DATA_IS_EMPTY);
         }else {
             map.put("data", list);
-            map.put("status", constant.SUCCESSFUL);
+            map.put("status", VOConstant.SUCCESSFUL);
         }
         return map;
     }
@@ -91,10 +90,10 @@ public class ComlController {
         List<Coml> list = comlService.getAll();
         if(list == null){
             map.put("data",null);
-            map.put("status",constant.DATA_IS_EMPTY);
+            map.put("status",VOConstant.DATA_IS_EMPTY);
         }else{
             map.put("data",list);
-            map.put("status",constant.SUCCESSFUL);
+            map.put("status",VOConstant.SUCCESSFUL);
         }
         return map;
     }

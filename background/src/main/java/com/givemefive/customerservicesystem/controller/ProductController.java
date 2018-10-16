@@ -2,7 +2,7 @@ package com.givemefive.customerservicesystem.controller;
 
 
 
-import com.givemefive.customerservicesystem.model.Product;
+import com.givemefive.customerservicesystem.model.bean.Product;
 import com.givemefive.customerservicesystem.repostory.ProductDao;
 import com.givemefive.customerservicesystem.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;

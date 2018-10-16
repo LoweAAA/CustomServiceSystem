@@ -2,8 +2,8 @@ package respostorytest;
 
 
 import com.givemefive.customerservicesystem.config.RootConfig;
-import com.givemefive.customerservicesystem.model.CustomerService;
-import com.givemefive.customerservicesystem.model.Product;
+import com.givemefive.customerservicesystem.model.bean.CustomerService;
+import com.givemefive.customerservicesystem.model.bean.Product;
 import com.givemefive.customerservicesystem.repostory.CustomerserviceDao;
 import com.givemefive.customerservicesystem.repostory.ProductDao;
 import com.givemefive.customerservicesystem.service.CSservice;

@@ -1,7 +1,7 @@
 package com.givemefive.customerservicesystem.controller;
 
 
-import com.givemefive.customerservicesystem.model.SystemQuestion;
+import com.givemefive.customerservicesystem.model.bean.SystemQuestion;
 import com.givemefive.customerservicesystem.service.SQuesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

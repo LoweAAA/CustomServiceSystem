@@ -2,7 +2,7 @@ package respostorytest;
 
 
 import com.givemefive.customerservicesystem.config.RootConfig;
-import com.givemefive.customerservicesystem.model.Record;
+import com.givemefive.customerservicesystem.model.bean.Record;
 import com.givemefive.customerservicesystem.repostory.RecordDao;
 import org.junit.Test;
 import org.junit.runner.RunWith;

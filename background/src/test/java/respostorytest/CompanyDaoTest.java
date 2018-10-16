@@ -2,7 +2,7 @@ package respostorytest;
 
 
 import com.givemefive.customerservicesystem.config.RootConfig;
-import com.givemefive.customerservicesystem.model.Company;
+import com.givemefive.customerservicesystem.model.bean.Company;
 import com.givemefive.customerservicesystem.repostory.CompanyDao;
 import com.givemefive.customerservicesystem.service.CompanyService;
 import org.junit.Test;
@@ -27,11 +27,11 @@ public class CompanyDaoTest {
 
 
 
-    @Test
+/*    @Test
     public void loginconfirm(){
         String company = companyService.loginconfirm("apple@gmail.com","123");
         System.out.println(company);
-    }
+    }*/
 
     @Test
     public void querybyid(){

@@ -1,7 +1,7 @@
 package com.givemefive.customerservicesystem.repostory;
 
 
-import com.givemefive.customerservicesystem.model.User;
+import com.givemefive.customerservicesystem.model.bean.User;
 import java.util.*;
 
 public interface UserDao {

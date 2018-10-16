@@ -1,13 +1,12 @@
 package com.givemefive.customerservicesystem.service.impl;
 
-import com.givemefive.customerservicesystem.model.Admin;
-import com.givemefive.customerservicesystem.model.Constant.Constant;
+import com.givemefive.customerservicesystem.model.bean.Admin;
+import com.givemefive.customerservicesystem.model.VO.VOConstant;
 import com.givemefive.customerservicesystem.model.Constant.Result;
 import com.givemefive.customerservicesystem.repostory.AdminDao;
 import com.givemefive.customerservicesystem.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import scala.collection.immutable.Stream;
 
 @Service
 public class AdminImpl implements AdminService{
@@ -24,16 +23,16 @@ public class AdminImpl implements AdminService{
         try {
             Admin admin = adminDao.queryByMail(mail);
             if (admin == null){
-                result.setERRmessage(Constant.WRONG_ID_ERROR);
+                result.setERRmessage(VOConstant.WRONG_ID_ERROR);
             }else if(admin.getAdminPass().equals(password) ){
                 result.setComplete(true);
-                result.setERRmessage(Constant.SUCCESSFUL);
+                result.setERRmessage(VOConstant.SUCCESSFUL);
             }else {
-                result.setERRmessage(Constant.FAIL);
+                result.setERRmessage(VOConstant.FAIL);
             }
         }catch (Exception e){
             System.out.println(e);
-            result.setERRmessage(Constant.UNKNOWERROR);
+            result.setERRmessage(VOConstant.UNKNOWERROR);
         }
 
         return result;

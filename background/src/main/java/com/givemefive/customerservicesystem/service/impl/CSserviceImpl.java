@@ -1,7 +1,7 @@
 package com.givemefive.customerservicesystem.service.impl;
 
 
-import com.givemefive.customerservicesystem.model.CustomerService;
+import com.givemefive.customerservicesystem.model.bean.CustomerService;
 import com.givemefive.customerservicesystem.repostory.CustomerserviceDao;
 import com.givemefive.customerservicesystem.service.CSservice;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,7 +1,6 @@
 package com.givemefive.customerservicesystem.service;
 
-import com.givemefive.customerservicesystem.model.AskForLeave;
-import com.sun.org.apache.xpath.internal.operations.Bool;
+import com.givemefive.customerservicesystem.model.bean.AskForLeave;
 
 import java.util.List;
 

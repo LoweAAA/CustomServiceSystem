@@ -1,6 +1,6 @@
 package com.givemefive.customerservicesystem.repostory;
 
-import com.givemefive.customerservicesystem.model.Admin;
+import com.givemefive.customerservicesystem.model.bean.Admin;
 
 public interface AdminDao {
 

@@ -1,8 +1,7 @@
 package com.givemefive.customerservicesystem.service.impl;
 
 
-import com.givemefive.customerservicesystem.model.AskForLeave;
-import com.givemefive.customerservicesystem.model.SystemQuestion;
+import com.givemefive.customerservicesystem.model.bean.AskForLeave;
 import com.givemefive.customerservicesystem.repostory.AskForLeaveDao;
 import com.givemefive.customerservicesystem.service.AskForLeaveService;
 import org.springframework.beans.factory.annotation.Autowired;

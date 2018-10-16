@@ -1,6 +1,6 @@
 package com.givemefive.customerservicesystem.repostory.impl;
 
-import com.givemefive.customerservicesystem.model.Company;
+import com.givemefive.customerservicesystem.model.bean.Company;
 import com.givemefive.customerservicesystem.repostory.CompanyDao;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

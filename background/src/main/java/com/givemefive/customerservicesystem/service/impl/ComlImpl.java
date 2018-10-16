@@ -1,7 +1,7 @@
 package com.givemefive.customerservicesystem.service.impl;
 
-import com.givemefive.customerservicesystem.model.Coml;
-import com.givemefive.customerservicesystem.model.Constant.Constant;
+import com.givemefive.customerservicesystem.model.bean.Coml;
+import com.givemefive.customerservicesystem.model.VO.VOConstant;
 import com.givemefive.customerservicesystem.model.Constant.Result;
 import com.givemefive.customerservicesystem.repostory.ComlDao;
 import com.givemefive.customerservicesystem.service.ComlService;
@@ -14,7 +14,6 @@ import java.util.List;
 public class ComlImpl implements ComlService {
 
     private Result result;
-    private Constant constant = new Constant();
 
     @Autowired
     private ComlDao comlDao;
@@ -27,14 +26,14 @@ public class ComlImpl implements ComlService {
             try{
                 comlDao.addComl(coml);
                 result.setComplete(true);
-                result.setERRmessage(constant.ADD_SUCCESSFUL);
+                result.setERRmessage(VOConstant.ADD_SUCCESSFUL);
             }catch (Exception e){
                 System.out.println(e);
-                result.setERRmessage(constant.UNKNOWERROR);
+                result.setERRmessage(VOConstant.UNKNOWERROR);
             }
         }else {
             result.setComplete(false);
-            result.setERRmessage(constant.DATA_IS_EMPTY);
+            result.setERRmessage(VOConstant.DATA_IS_EMPTY);
         }
 
         return result;
@@ -45,18 +44,18 @@ public class ComlImpl implements ComlService {
         result = new Result();
         if (coml == null){
             result.setComplete(false);
-            result.setERRmessage(constant.DATA_IS_EMPTY);
+            result.setERRmessage(VOConstant.DATA_IS_EMPTY);
         }else if(comlDao.queryById(coml.getComlId()) == null){
             result.setComplete(false);
-            result.setERRmessage(constant.ITEM_ISNOT_EXIST);
+            result.setERRmessage(VOConstant.ITEM_ISNOT_EXIST);
         }else {
             try{
                 comlDao.update(coml);
                 result.setComplete(true);
-                result.setERRmessage(constant.UPDATE_SUCCESSFUL);
+                result.setERRmessage(VOConstant.UPDATE_SUCCESSFUL);
             }catch (Exception e){
                 System.out.println(e);
-                result.setERRmessage(constant.UNKNOWERROR);
+                result.setERRmessage(VOConstant.UNKNOWERROR);
             }
         }
         return result;
@@ -67,15 +66,15 @@ public class ComlImpl implements ComlService {
         result = new Result();
         if(comlDao.queryById(id) == null){
             result.setComplete(false);
-            result.setERRmessage(constant.ITEM_ISNOT_EXIST);
+            result.setERRmessage(VOConstant.ITEM_ISNOT_EXIST);
         }else {
             try{
                 comlDao.delete(id);
                 result.setComplete(true);
-                result.setERRmessage(constant.DELETE_SUCCESSFUL);
+                result.setERRmessage(VOConstant.DELETE_SUCCESSFUL);
             }catch (Exception e){
                 System.out.println(e);
-                result.setERRmessage(constant.UNKNOWERROR);
+                result.setERRmessage(VOConstant.UNKNOWERROR);
             }
         }
         return result;

@@ -1,6 +1,6 @@
 package com.givemefive.customerservicesystem.service;
 
-import com.givemefive.customerservicesystem.model.Coml;
+import com.givemefive.customerservicesystem.model.bean.Coml;
 import com.givemefive.customerservicesystem.model.Constant.Result;
 
 import java.util.List;

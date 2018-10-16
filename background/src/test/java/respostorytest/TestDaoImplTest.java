@@ -3,23 +3,18 @@ package respostorytest;
 
 import com.givemefive.customerservicesystem.config.RootConfig;
 import com.givemefive.customerservicesystem.controller.RepositoryController;
-import com.givemefive.customerservicesystem.model.*;
 
-import com.givemefive.customerservicesystem.repostory.RecordDao;
-import com.givemefive.customerservicesystem.repostory.TestDao;
+import com.givemefive.customerservicesystem.model.bean.Coml;
+import com.givemefive.customerservicesystem.model.bean.CustomerService;
+import com.givemefive.customerservicesystem.model.bean.Repository;
 import com.givemefive.customerservicesystem.service.*;
 import com.givemefive.customerservicesystem.service.util.GetRecentDateService;
 import org.junit.Test;
-import org.junit.runner.Result;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.sql.Date;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 

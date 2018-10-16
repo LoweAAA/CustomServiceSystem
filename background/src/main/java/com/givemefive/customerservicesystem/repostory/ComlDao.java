@@ -1,6 +1,6 @@
 package com.givemefive.customerservicesystem.repostory;
 
-import com.givemefive.customerservicesystem.model.Coml;
+import com.givemefive.customerservicesystem.model.bean.Coml;
 
 import java.util.List;
 

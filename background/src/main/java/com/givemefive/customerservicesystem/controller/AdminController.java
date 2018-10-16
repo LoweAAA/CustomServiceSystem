@@ -1,7 +1,7 @@
 package com.givemefive.customerservicesystem.controller;
 
 
-import com.givemefive.customerservicesystem.model.Constant.Constant;
+import com.givemefive.customerservicesystem.model.VO.VOConstant;
 import com.givemefive.customerservicesystem.model.Constant.Result;
 import com.givemefive.customerservicesystem.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,10 +31,10 @@ public class AdminController {
         Result result = adminService.loginConfirm(mail,password);
         if (result.isComplete()){
             map.put("data",true);
-            map.put("status", Constant.SUCCESSFUL);
+            map.put("status", VOConstant.SUCCESSFUL);
         }else {
             map.put("data",false);
-            map.put("status",Constant.FAIL);
+            map.put("status", VOConstant.FAIL);
         }
         return map;
 

@@ -1,7 +1,6 @@
 package com.givemefive.customerservicesystem.repostory;
 
-import com.givemefive.customerservicesystem.model.Record;
-import com.givemefive.customerservicesystem.model.Test;
+import com.givemefive.customerservicesystem.model.bean.Test;
 
 import java.util.List;
 

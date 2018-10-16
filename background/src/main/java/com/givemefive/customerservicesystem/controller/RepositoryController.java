@@ -1,9 +1,9 @@
 package com.givemefive.customerservicesystem.controller;
 
 
-import com.givemefive.customerservicesystem.model.Constant.Constant;
+import com.givemefive.customerservicesystem.model.VO.VOConstant;
 import com.givemefive.customerservicesystem.model.Constant.Result;
-import com.givemefive.customerservicesystem.model.Repository;
+import com.givemefive.customerservicesystem.model.bean.Repository;
 import com.givemefive.customerservicesystem.service.RepositorySerivce;
 import com.givemefive.customerservicesystem.service.util.GetRecentDateService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.sql.Date;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -22,6 +20,8 @@ import java.util.Map;
 @Controller
 @CrossOrigin(origins = "*", maxAge = 3600)
 public class RepositoryController {
+
+    //public static Logger logger = Logger.getLogger(RepositoryController.class);
 
     @Autowired
     private RepositorySerivce repositorySerivce;
@@ -100,7 +100,7 @@ public class RepositoryController {
             map.put("data","");
         }else {
             map.put("data",list);
-            map.put("status", Constant.SUCCESSFUL);
+            map.put("status", VOConstant.SUCCESSFUL);
         }
         return map;
     }

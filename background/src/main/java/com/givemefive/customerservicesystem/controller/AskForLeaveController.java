@@ -1,7 +1,7 @@
 package com.givemefive.customerservicesystem.controller;
 
 
-import com.givemefive.customerservicesystem.model.AskForLeave;
+import com.givemefive.customerservicesystem.model.bean.AskForLeave;
 import com.givemefive.customerservicesystem.service.AskForLeaveService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

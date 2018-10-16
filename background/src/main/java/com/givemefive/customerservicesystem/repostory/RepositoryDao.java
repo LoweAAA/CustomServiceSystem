@@ -1,6 +1,6 @@
 package com.givemefive.customerservicesystem.repostory;
 
-import com.givemefive.customerservicesystem.model.Repository;
+import com.givemefive.customerservicesystem.model.bean.Repository;
 
 import java.util.List;
 

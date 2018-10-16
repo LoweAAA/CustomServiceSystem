@@ -1,7 +1,7 @@
 package com.givemefive.customerservicesystem.service.impl;
 
 
-import com.givemefive.customerservicesystem.model.Category;
+import com.givemefive.customerservicesystem.model.bean.Category;
 import com.givemefive.customerservicesystem.repostory.CategoryDao;
 import com.givemefive.customerservicesystem.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
